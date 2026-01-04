@@ -1,0 +1,195 @@
+{
+  "home": {
+    "subtitle": "von Jan Ole Petersen M.Sc.",
+    "subtitle2": "Ich entwickle interaktive Web- und 3D-Anwendungen mit Vue, Unity und weiteren Tools.",
+    "viewProjects": "Projekte ansehen",
+    "getInTouch": "Kontakt aufnehmen",
+    "showAllProjects": "Alle Projekte anzeigen",
+    "showFeaturedOnly": "Nur Featured anzeigen",
+    "skills": "Fähigkeiten & Technologien",
+    "gameDev": "Spieleentwicklung",
+    "webDev": "Webentwicklung",
+    "tools": "Tools & Sonstiges",
+    "universityProject": "Universitätsprojekt",
+    "researchProject": "Forschungsprojekt",
+    "playVideo": "Video abspielen",
+    "closeVideo": "Video schließen",
+    "keywords": {
+      "Unity": "Unity",
+      "VR": "VR",
+      "Game Development": "Spieleentwicklung",
+      "Master Thesis": "Masterarbeit",
+      "Vue.js": "Vue.js",
+      "Web Development": "Webentwicklung",
+      "Hackathon": "Hackathon",
+      "Team Project": "Teamprojekt",
+      "Solo Project": "Einzelprojekt",
+      "Nuxt.js": "Nuxt.js",
+      "Bachelor Project": "Bachelorarbeit",
+      "Godot": "Godot",
+      "Puzzle": "Puzzle",
+      "Browser Game": "Browserspiel",
+      "Meet-Up Spiel": "Meet-Up-Spiel",
+      "Social": "Sozial",
+      "Action": "Action",
+      "Virtual Reality": "Virtual Reality",
+      "Virtual Reality Nuggets": "VR Nuggets",
+      "Immersive Learning": "Immersives Lernen",
+      "Optische Illusionen": "Optische Illusionen",
+      "citizen participation": "Bürgerbeteiligung",
+      "relevant information": "relevante Informationen",
+      "information presentation": "Darstellung von Informationen",
+      "Bürgerbeteiligung": "Bürgerbeteiligung",
+      "relevante Informationen": "relevante Informationen",
+      "Darstellung von Informationen": "Darstellung von Informationen"
+    },
+    "playOnItchIo": "Auf itch.io spielen",
+    "visitWebsite": "Website besuchen",
+    "visitMeetUpWebsite": "Meet-Up Website besuchen",
+    "viewOnGitHub": "Auf GitHub ansehen",
+    "contactForm": {
+      "title": "Kontakt",
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "emailPlaceholder": "ihre.email@beispiel.de",
+      "emailRequired": "E-Mail (für Rückmeldung)",
+      "message": "Nachricht",
+      "messagePlaceholder": "Ihre Nachricht...",
+      "send": "Senden",
+      "sending": "Wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet!",
+      "error": "Fehler beim Senden. Bitte versuchen Sie es erneut.",
+      "nameRequired": "Bitte geben Sie Ihren Namen ein.",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "messageRequired": "Bitte geben Sie eine Nachricht ein.",
+      "close": "Schließen"
+    },
+    "projectTranslations": {
+      "weltAal": {
+        "text1": "Ein Multiplayer-Puzzle-Spiel für öffentliche Räume mit selbst entwickelten Fußpedal-Controllern.",
+        "text2": "Kooperatives Multiplayer-Spiel mit Ressourcenmanagement und Gegnermechaniken, entwickelt in Godot Engine 4.4 mit GDScript. Im Fokus stand die <span class=\"highlight\">intuitive Nutzung nicht-traditioneller Eingabegeräte</span>. Umgesetzt wurde ein <span class=\"highlight\">kooperatives Levelsystem mit mehreren Schwierigkeitsstufen und Gegnertypen</span>, ergänzt durch eine visuelle und akustische Gestaltung nach dem „8 Kinds of Fun“-Framework."
+      },
+
+      "collectivity": {
+        "text1": "Ein Serious Game, das zehn Medieninformatik Meet-Ups durch interaktives Gameplay erfahrbar macht.",
+        "text2": "Levelbasiertes Serious Game, entwickelt mit Unity und C#, bei dem jedes Level ein Meet-Up-Thema spielerisch abbildet. Zentrale Aufgabe war die <span class=\"highlight\">Übersetzung abstrakter Inhalte in verständliche Spielmechaniken</span>. Unterstützt wurde dies durch ein <span class=\"highlight\">Playtesting- und Usability-Framework</span> für klare Lern- und Spielflüsse."
+      },
+
+      "defeatTheBeast": {
+        "text1": "Ein browserbasiertes Action-Spiel mit dynamischem Schwierigkeitssystem und regenerierendem Boss und permanentem Zeitdruck.",
+        "text2": "Die Herausforderung lag im <span class=\"highlight\">Balancing von Zeitdruck, Ressourcenmanagement und Gegnerverhalten</span>. Ergänzt wurde dies durch ein <span class=\"highlight\">Progressions- und Upgradesystem mit Erkundung und mehreren Schwierigkeitsgraden</span>, umgesetzt in Unity (LTS 2022.3.14) mit C#."
+      },
+
+      "pitipsDe": {
+        "text1": "Eine Forschungsplattform zur Vernetzung informell Pflegender mit wissenschaftlichen Projekten.",
+        "text2": "Webplattform mit Karten-, Such- und Filterfunktionen zur schnellen Projektfindung. Der Fokus lag auf der <span class=\"highlight\">verständlichen Aufbereitung komplexer Forschungsinhalte</span>. Umgesetzt wurde ein <span class=\"highlight\">nutzerzentriertes Navigations- und Onboarding-System</span> für eine niedrige Einstiegshürde."
+      },
+
+      "escooty": {
+        "text1": "Eine Webanwendung zur Visualisierung öffentlicher Mobilitätsdaten für Verkehrsplanung.",
+        "text2": "Multi-Layer-Kartensystem für Mobilitäts- und Infrastrukturdaten, entwickelt mit Vue.js, Leaflet und Turf.js. Zentrale Herausforderung war die <span class=\"highlight\">Integration und Visualisierung heterogener Geodaten</span>. Ergänzt durch <span class=\"highlight\">interaktive Planungstools zur Standort- und Abdeckungsanalyse</span>."
+      },
+
+      "bachelorThesisWebApp": {
+        "text1": "Eine Webanwendung zur Darstellung von Bürgerbeteiligungsprojekten.",
+        "text2": "Barrierefreies Informationssystem nach Human-Centered-Design-Prinzipien mit Vue.js. Der Schwerpunkt lag auf der <span class=\"highlight\">klaren Strukturierung komplexer Projektinformationen</span> sowie der Umsetzung von <span class=\"highlight\">Accessibility-Features für eine breite Nutzbarkeit</span>."
+      },
+
+      "masterThesisGame": {
+        "title": "Vermittlung von grundlegenden Programmierkonzepten mithilfe von VR",
+        "text1": "Ein hybrides Lernsystem aus VR- und webbasierten Modulen zur Vermittlung von Programmierkonzepten.",
+        "text2": "Kombination aus webbasierten Lernmodulen und immersivem VR-Training mit Unity. Zentrale Herausforderung war die <span class=\"highlight\">Übertragung abstrakter Programmierlogik in interaktive VR-Erlebnisse</span>. Entwickelt wurde ein <span class=\"highlight\">didaktisch kombiniertes Lernsystem aus VR-Nuggets und Webmodulen</span>, dessen Lernerfolg evaluiert wurde."
+      },
+
+      "opticalIllusionsVR": {
+        "title": "Optische Illusionen in VR",
+        "text1": "Eine VR-Anwendung, die optische Illusionen und Impossible Spaces durch Bewegung erfahrbar macht.",
+        "text2": "Der Fokus lag auf dem <span class=\"highlight\">gezielten Einsatz von Wahrnehmungstäuschungen zur Raumverfälschung</span> sowie <span class=\"highlight\">bewegungsbasierten Puzzle-Mechaniken</span>."
+      }
+    },
+    "footer": {
+      "getInTouch": "Kontakt aufnehmen",
+      "description": "Ich bin immer offen für die Diskussion neuer Projekte, kreativer Ideen oder Möglichkeiten zur Zusammenarbeit.",
+      "email": "E-Mail",
+      "linkedin": "LinkedIn",
+      "xing": "XING",
+      "copyright": "© 2026 Jan Ole Petersen. Alle Rechte vorbehalten.",
+      "privacyPolicy": "Datenschutzerklärung",
+      "imprint": "Impressum",
+      "accessibilityStatement": "Barrierefreiheitserklärung"
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzerklärung",
+      "lastUpdated": "Zuletzt aktualisiert:",
+      "informationWeCollect": "Von uns gesammelte Informationen",
+      "informationWeCollectText": "Diese Website sammelt keine persönlichen Informationen automatisch. Alle Informationen, die Sie über Kontaktformulare oder E-Mail bereitstellen, werden ausschließlich für Kommunikationszwecke verwendet.",
+      "howWeUse": "Wie wir Ihre Informationen verwenden",
+      "howWeUseText": "Alle von Ihnen bereitgestellten Informationen werden verwendet, um auf Ihre Anfragen zu antworten und über potenzielle Projekte oder Möglichkeiten zu kommunizieren.",
+      "dataSecurity": "Datensicherheit",
+      "dataSecurityText": "Wir ergreifen angemessene Maßnahmen zum Schutz aller von Ihnen bereitgestellten Informationen, obwohl keine Übertragungsmethode über das Internet zu 100% sicher ist.",
+      "contact": "Kontakt",
+      "contactText": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie mich bitte per E-Mail."
+    },
+    "imprint": {
+      "title": "Impressum",
+      "lastUpdated": "Zuletzt aktualisiert:",
+      "responsible": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+      "name": "Portfolio",
+      "address": "Musterstraße 123",
+      "postalCode": "12345 Musterstadt",
+      "country": "Deutschland",
+      "contact": "Kontakt",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "phoneNumber": "+49 (0) 123 456789",
+      "websiteHost": "Website-Hosting",
+      "websiteHostText": "Diese Website wird gehostet von einem externen Hosting-Anbieter. Der Hosting-Anbieter ist für die technische Bereitstellung und Verfügbarkeit der Website verantwortlich. Für den Inhalt der Website ist der oben genannte Verantwortliche zuständig.",
+      "liability": "Haftungsausschluss",
+      "liabilityText": "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.",
+      "links": "Haftung für Links",
+      "linksText": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+      "copyright": "Urheberrecht",
+      "copyrightText": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    },
+    "cookieBanner": {
+      "title": "Cookie-Einstellungen",
+      "text": "Diese Website verwendet localStorage, um Ihre Spracheinstellung zu speichern. Durch die Nutzung dieser Website stimmen Sie der Verwendung von localStorage zu. Sie können jederzeit Ihre Zustimmung widerrufen.",
+      "accept": "Akzeptieren",
+      "reject": "Ablehnen",
+      "learnMore": "Mehr erfahren"
+    },
+    "startupModal": {
+      "title": "Willkommen",
+      "subtitle": "Bitte wählen Sie Ihre bevorzugten Einstellungen",
+      "languageTitle": "Sprache",
+      "themeTitle": "Design",
+      "darkMode": "Dunkel",
+      "lightMode": "Hell",
+      "continue": "Fortfahren",
+      "preview": "Vorschau"
+    },
+    "accessibilityStatement": {
+      "title": "Barrierefreiheitserklärung",
+      "lastUpdated": "Zuletzt aktualisiert:",
+      "compliance": "Konformitätsstatus",
+      "complianceText": "Diese Website ist bestrebt, die Web Content Accessibility Guidelines (WCAG) 2.1 auf Level AA zu erfüllen, wie in der EU-Richtlinie 2016/2102 und dem deutschen Barrierefreiheitsstärkungsgesetz (BFSG) gefordert.",
+      "standards": "Zugänglichkeitsstandards",
+      "standardsText": "Diese Website wurde entwickelt, um die WCAG 2.1 Level AA Standards zu erfüllen. Wir haben verschiedene Maßnahmen implementiert, um die Zugänglichkeit für alle Nutzer zu gewährleisten.",
+      "measures": "Implementierte Maßnahmen",
+      "measure1": "Semantisches HTML für bessere Screen-Reader-Kompatibilität",
+      "measure2": "Vollständige Tastaturnavigation für alle interaktiven Elemente",
+      "measure3": "ARIA-Labels und Rollen für assistive Technologien",
+      "measure4": "Angemessene Farbkontraste für bessere Lesbarkeit",
+      "measure5": "Dynamische Sprachattribute für mehrsprachige Unterstützung",
+      "feedback": "Feedback",
+      "feedbackText": "Wir sind bestrebt, die Zugänglichkeit dieser Website kontinuierlich zu verbessern. Wenn Sie auf Barrieren stoßen oder Verbesserungsvorschläge haben, kontaktieren Sie uns bitte.",
+      "contact": "Kontakt für Barrierefreiheitsfragen"
+    }
+  },
+  "games": {
+    "title": "Spiele"
+  },
+  "websites": {
+    "title": "Webseite"
+  }
+}

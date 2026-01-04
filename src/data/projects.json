@@ -1,0 +1,149 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "title": "Informationen zu Bürgerbeteiligung",
+      "category": "Web Development",
+      "featured": true,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2023-09",
+      "keywords": ["Solo Project", "Vue.js", "Bachelor Project", "Web Development", "citizen participation", "relevant information", "information presentation"],
+      "image": "izb.png",
+      "video": null,
+      "links": [
+        {
+          "label": "View on GitHub",
+          "url": "https://github.com/JanOlePetersen/BA-DiskurseDarstellenWebApp",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Optische Illusionen in VR",
+      "category": "Game Development",
+      "featured": true,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2024-01",
+      "keywords": ["Team Project", "Unity", "VR", "Optische Illusionen"],
+      "image": "/optical.png",
+      "video": "https://www.youtube.com/embed/TGucT28_IwM?si=oni3XH7A6W8rqNDQ",
+      "links": []
+    },
+    {
+      "id": 2,
+      "title": "Collectivity: Gemeinsam zurück in die Zukunft",
+      "category": "Game Development",
+      "featured": false,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2025-02",
+      "keywords": [ "Solo Project", "Unity", "Meet-Up Spiel", "Browser Game"],
+      "image": "praktikum.png",
+      "video": null,
+      "links": [
+        {
+          "label": "Play on itch.io",
+          "url": "https://olepetersen.itch.io/collectivity-gemeinsam-zuruck-in-die-zukunft",
+          "external": true
+        },
+        {
+          "label": "Visit the Meet-Up Website",
+          "url": "https://meetup-mdi.de/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Defeat the Beast",
+      "category": "Game Development",
+      "featured": true,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2024-08",
+      "keywords": ["Team Project", "Unity", "Action", "Browser Game"],
+      "image": "/home_menue2.png",
+      "video": "https://youtu.be/edcIjlMUTcs",
+      "links": [
+        {
+          "label": "Play on itch.io",
+          "url": "https://olepetersen.itch.io/defeat-the-beast",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Welt-Aal",
+      "category": "Game Development",
+      "featured": true,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2025-08",
+      "keywords": [ "Team Project", "Godot", "Puzzle","Browser Game"],
+      "image": "/Boot_Splash.png",
+      "video": null,
+      "links": [
+        {
+          "label": "Play on itch.io",
+          "url": "https://olepetersen.itch.io/welt-aal",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "escooty",
+      "category": "Web Development",
+      "featured": false,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2025-01",
+      "keywords": ["Team Project", "Vue.js", "Web Development", "Hackathon"],
+      "image": "escooty.ico",
+      "video": null,
+      "links": [
+        {
+          "label": "View on GitHub",
+          "url": "https://github.com/JanOlePetersen/escooty",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "pitips.de",
+      "category": "Web Development",
+      "featured": true,
+      "released": true,
+      "researchProject": true,
+      "dateFinished": "2025-11",
+      "keywords": ["Team Project", "Nuxt.js", "Web Development"],
+      "image": "/PiTiPS_Logo.png",
+      "video": null,
+      "links": [
+        {
+          "label": "Visit Website",
+          "url": "https://pitips.de",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Vermittlung von grundlegenden Programmmierkonzepten mithilfe von VR",
+      "category": "Game Development",
+      "featured": true,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2025-12",
+      "keywords": ["Solo Project", "Unity", "VR", "Game Development", "Master Thesis", "Virtual Reality Nuggets", "Immersive Learning"],
+      "image": "/mq2.png",
+      "video": "https://youtu.be/e1o862HUclU",
+      "links": []
+    }
+  ]
+}
