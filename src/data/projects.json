@@ -30,7 +30,13 @@
       "keywords": ["Team Project", "Unity", "VR", "Optische Illusionen"],
       "image": "/optical.png",
       "video": "https://www.youtube.com/embed/TGucT28_IwM?si=oni3XH7A6W8rqNDQ",
-      "links": []
+      "links": [
+        {
+          "label": "View on GitHub",
+          "url": "https://github.com/JanOlePetersen/VPMedien-WS2023-Optical-Illusions-VR-1",
+          "external": true
+        }
+      ]
     },
     {
       "id": 2,
@@ -72,6 +78,11 @@
           "label": "Play on itch.io",
           "url": "https://olepetersen.itch.io/defeat-the-beast",
           "external": true
+        },
+        {
+          "label": "View on GitHub",
+          "url": "https://github.com/JanOlePetersen/DefeatTheBeast",
+          "external": true
         }
       ]
     },
@@ -90,6 +101,11 @@
         {
           "label": "Play on itch.io",
           "url": "https://olepetersen.itch.io/welt-aal",
+          "external": true
+        },
+        {
+          "label": "View on GitHub",
+          "url": "https://github.com/JanOlePetersen/Welt-Aal",
           "external": true
         }
       ]
@@ -143,7 +159,13 @@
       "keywords": ["Solo Project", "Unity", "VR", "Game Development", "Master Thesis", "Virtual Reality Nuggets", "Immersive Learning"],
       "image": "/mq2.png",
       "video": "https://youtu.be/e1o862HUclU",
-      "links": []
+      "links": [
+        {
+          "label": "View on GitHub",
+          "url": "https://github.com/JanOlePetersen/MA_Branch_blox-a-plant",
+          "external": true
+        }
+      ]
     }
   ]
 }
