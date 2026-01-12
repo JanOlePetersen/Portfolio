@@ -420,12 +420,12 @@
         </div>
       </div>
 
-      <!-- Gallery Modal -->
+      <!-- Carousel Modal -->
       <div v-if="showGalleryModal" class="modal-overlay" @click="closeGalleryModal">
         <div class="modal-content video-modal-content" @click.stop>
           <button class="modal-close" @click="closeGalleryModal" :aria-label="t('home.closeGallery')">×</button>
           <div class="video-modal-body">
-            <div class="" style="position: relative; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+            <div class="carousel-container">
               <button 
                 v-if="currentGallery.length > 1" 
                 @click.stop="prevImage" 
@@ -435,12 +435,12 @@
                 v-if="currentGallery.length > 0"
                 :src="getImagePath(currentGallery[currentGalleryIndex])"
                 alt="Gallery image"
-                style="max-height: 70vh; width: auto; object-fit: contain; border-radius: 4px;"
+                class="carousel-image"
               />
               <button 
                 v-if="currentGallery.length > 1" 
                 @click.stop="nextImage" 
-                class="carousel-btn carousel-next" 
+                class="carousel-btn carousel-next"
               ><span data-v-18fc5d82="" class="carousel-arrow-right">›</span></button>
               
               <div v-if="currentGallery.length > 1" class="carousel-indicators" style="position: absolute; bottom: 10px; display: flex; gap: 8px; z-index: 10;">

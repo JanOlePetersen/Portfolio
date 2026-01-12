@@ -829,6 +829,22 @@
   z-index: 1;
 }
 
+.home .carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+}
+
+.home .carousel-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
 .home .carousel-btn {
   position: absolute;
   top: 50%;
