@@ -23,7 +23,7 @@
           <p class="hero-subtitle" v-html="t('home.subtitle')"></p>
           <p class="hero-subtitle">{{ t('home.subtitle2') }}</p>
           <div class="hero-buttons">
-            <a href="#games" class="btn btn-primary" @click="scrollTo('games')">{{ t('home.viewProjects') }}</a>
+            <a href="#websites" class="btn btn-primary" @click="scrollTo('websites')">{{ t('home.viewProjects') }}</a>
             <a href="#footer" class="btn btn-secondary" @click="scrollTo('footer')">{{ t('home.getInTouch') }}</a>
           </div>
         </div>
@@ -38,10 +38,11 @@
             <div class="skill-tags">
               <span class="skill-tag">Godot Engine</span>
               <span class="skill-tag">Unity Engine</span>
-              <span class="skill-tag">C#</span>
               <span class="skill-tag">Game Design</span>
-              <span class="skill-tag">Animation</span>
               <span class="skill-tag">Physics</span>
+              <span class="skill-tag">Animation</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">GDScript</span>
             </div>
           </div>
           <div class="skill-category">
@@ -55,7 +56,6 @@
               <span class="skill-tag">Node.js</span>
               <span class="skill-tag">TypeScript</span>
               <span class="skill-tag">Responsive Design</span>
-              <span class="skill-tag">GDScript</span>
             </div>
           </div>
           <div class="skill-category">
@@ -73,24 +73,28 @@
         </div>
       </section>
 
-      <!-- Games Section -->
-      <section id="games" class="section">
+      <!-- Websites Section -->
+      <section id="websites" class="section">
         <div class="section-header">
-          <h2 class="section-title">{{ t('games.title') }}</h2>
+          <h2 class="section-title">{{ t('websites.title') }}</h2>
+          <button @click="showAllWeb = !showAllWeb" class="btn btn-primary btn-more">
+            {{ getShowMoreText(showAllWeb) }}
+          </button>
         </div>
         
-        <div class="project-category" v-if="displayedGames.length > 0">
+
+        <div class="project-category" v-if="displayedWebProjects.length > 0">
           <div class="projects-grid">
             <div 
-              v-for="(project, index) in displayedGames" 
+              v-for="(project, index) in displayedWebProjects" 
               :key="project.id"
               class="project-card"
               :class="{ 
-                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, gamesPairingMap) && !(index === displayedGames.length - 1 && shouldGetThreeColumns(project, index, gamesPairingMap)),
-                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, gamesPairingMap),
-                'project-card-last': index === displayedGames.length - 1,
-                'project-card-last-featured': index === displayedGames.length - 1 && project.featured && !shouldGetThreeColumns(project, index, gamesPairingMap),
-                'project-card-last-unfeatured': index === displayedGames.length - 1 && !project.featured
+                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && !(index === displayedWebProjects.length - 1 && shouldGetThreeColumns(project, index, webPairingMap)),
+                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, webPairingMap),
+                'project-card-last': index === displayedWebProjects.length - 1,
+                'project-card-last-featured': index === displayedWebProjects.length - 1 && project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && webLayoutMap[index] && webLayoutMap[index].colStart === 0,
+                'project-card-last-unfeatured': index === displayedWebProjects.length - 1 && !project.featured
               }"
             >
               <div class="project-image">
@@ -103,6 +107,14 @@
                   :aria-label="t('home.playVideo') + ' - ' + getProjectTitle(project)"
                 >
                   <span class="play-icon">▶</span>
+                </button>
+                <button 
+                  v-if="project.gallery && project.gallery.length"
+                  @click="openGalleryModal(project.gallery)"
+                  class="project-play-button"
+                  :aria-label="t('home.viewGallery') + ' - ' + getProjectTitle(project)"
+                >
+                  <span class="gallery-icon">⧉</span>
                 </button>
               </div>
               <div class="project-info">
@@ -142,23 +154,28 @@
         </div>
       </section>
 
-      <!-- Websites Section -->
-      <section id="websites" class="section">
+      <!-- Games Section -->
+      <section id="games" class="section">
         <div class="section-header">
-          <h2 class="section-title">{{ t('websites.title') }}</h2>
+          <h2 class="section-title">{{ t('games.title') }}</h2>
+          <button @click="showAllGames = !showAllGames" class="btn btn-primary btn-more">
+            {{ getShowMoreText(showAllGames) }}
+          </button>
         </div>
-        <div class="project-category" v-if="displayedWebProjects.length > 0">
+        
+        
+        <div class="project-category" v-if="displayedGames.length > 0">
           <div class="projects-grid">
             <div 
-              v-for="(project, index) in displayedWebProjects" 
+              v-for="(project, index) in displayedGames" 
               :key="project.id"
               class="project-card"
               :class="{ 
-                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && !(index === displayedWebProjects.length - 1 && shouldGetThreeColumns(project, index, webPairingMap)),
-                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, webPairingMap),
-                'project-card-last': index === displayedWebProjects.length - 1,
-                'project-card-last-featured': index === displayedWebProjects.length - 1 && project.featured && !shouldGetThreeColumns(project, index, webPairingMap),
-                'project-card-last-unfeatured': index === displayedWebProjects.length - 1 && !project.featured
+                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, gamesPairingMap) && !(index === displayedGames.length - 1 && shouldGetThreeColumns(project, index, gamesPairingMap)),
+                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, gamesPairingMap),
+                'project-card-last': index === displayedGames.length - 1,
+                'project-card-last-featured': index === displayedWebProjects.length - 1 && project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && webLayoutMap[index] && webLayoutMap[index].colStart === 0,
+                'project-card-last-unfeatured': index === displayedGames.length - 1 && !project.featured
               }"
             >
               <div class="project-image">
@@ -171,6 +188,14 @@
                   :aria-label="t('home.playVideo') + ' - ' + getProjectTitle(project)"
                 >
                   <span class="play-icon">▶</span>
+                </button>
+                <button 
+                  v-if="project.gallery && project.gallery.length"
+                  @click="openGalleryModal(project.gallery)"
+                  class="project-play-button"
+                  :aria-label="t('home.viewGallery') + ' - ' + getProjectTitle(project)"
+                >
+                  <span class="play-icon">⧉</span>
                 </button>
               </div>
               <div class="project-info">
@@ -395,6 +420,42 @@
         </div>
       </div>
 
+      <!-- Gallery Modal -->
+      <div v-if="showGalleryModal" class="modal-overlay" @click="closeGalleryModal">
+        <div class="modal-content video-modal-content" @click.stop>
+          <button class="modal-close" @click="closeGalleryModal" :aria-label="t('home.closeGallery')">×</button>
+          <div class="video-modal-body">
+            <div class="" style="position: relative; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+              <button 
+                v-if="currentGallery.length > 1" 
+                @click.stop="prevImage" 
+                class="carousel-btn carousel-prev"
+              ><span data-v-18fc5d82="" class="carousel-arrow-left">‹</span></button>
+              <img 
+                v-if="currentGallery.length > 0"
+                :src="getImagePath(currentGallery[currentGalleryIndex])"
+                alt="Gallery image"
+                style="max-height: 70vh; width: auto; object-fit: contain; border-radius: 4px;"
+              />
+              <button 
+                v-if="currentGallery.length > 1" 
+                @click.stop="nextImage" 
+                class="carousel-btn carousel-next" 
+              ><span data-v-18fc5d82="" class="carousel-arrow-right">›</span></button>
+              
+              <div v-if="currentGallery.length > 1" class="carousel-indicators" style="position: absolute; bottom: 10px; display: flex; gap: 8px; z-index: 10;">
+                <span 
+                  v-for="(_, idx) in currentGallery" 
+                  :key="idx" 
+                  @click.stop="currentGalleryIndex = idx"
+                  :class="idx === currentGalleryIndex ? 'carousel-indicator-point-selected' : 'carousel-indicator-point'"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Contact Form Modal -->
       <div v-if="showContactForm" class="modal-overlay" @click="closeContactForm">
         <div class="modal-content contact-form-modal" @click.stop>
@@ -525,7 +586,10 @@ const showAccessibilityStatement = ref(false)
 const showCookieBanner = shouldShowCookieBanner
 const showContactForm = ref(false)
 const showVideoModal = ref(false)
+const showGalleryModal = ref(false)
 const currentVideo = ref(null)
+const currentGallery = ref([])
+const currentGalleryIndex = ref(0)
 const isSubmitting = ref(false)
 const formSuccess = ref(false)
 const formError = ref(false)
@@ -544,14 +608,20 @@ const formErrors = ref({
   message: ''
 })
 
-// Handle Escape key for modals
-const handleEscapeKey = (e) => {
+// Handle keyboard events for modals
+const handleKeydown = (e) => {
   if (e.key === 'Escape') {
     if (showPrivacyPolicy.value) showPrivacyPolicy.value = false
     if (showImprint.value) showImprint.value = false
     if (showAccessibilityStatement.value) showAccessibilityStatement.value = false
     if (showContactForm.value) closeContactForm()
     if (showVideoModal.value) closeVideoModal()
+    if (showGalleryModal.value) closeGalleryModal()
+  }
+  
+  if (showGalleryModal.value) {
+    if (e.key === 'ArrowLeft') prevImage()
+    if (e.key === 'ArrowRight') nextImage()
   }
 }
 
@@ -559,11 +629,11 @@ const handleEscapeKey = (e) => {
 // Only show cookie banner after startup preferences have been set
 onMounted(() => {
   checkCookieBanner()
-  document.addEventListener('keydown', handleEscapeKey)
+  document.addEventListener('keydown', handleKeydown)
 })
 
 onUnmounted(() => {
-  document.removeEventListener('keydown', handleEscapeKey)
+  document.removeEventListener('keydown', handleKeydown)
 })
 
 // Cookie consent functions
@@ -654,9 +724,23 @@ const displayedWebProjects = computed(() => {
   return webProjects.value.filter(p => p.featured)
 })
 
+const hasHiddenGames = computed(() => allGames.value.some(p => !p.featured))
+const hasHiddenWeb = computed(() => webProjects.value.some(p => !p.featured))
+
+const getShowMoreText = (isShowLess) => {
+  if (language.value === 'de') {
+    return isShowLess ? 'Weniger anzeigen' : 'Mehr anzeigen'
+  }
+  return isShowLess ? 'Show Less' : 'Show More'
+}
+
+
 // Pre-calculate pairing maps for performance
 const gamesPairingMap = computed(() => calculateFeaturedPairing(displayedGames.value))
 const webPairingMap = computed(() => calculateFeaturedPairing(displayedWebProjects.value))
+
+const gamesLayoutMap = computed(() => calculateLayout(displayedGames.value, gamesPairingMap.value))
+const webLayoutMap = computed(() => calculateLayout(displayedWebProjects.value, webPairingMap.value))
 
 // Latest project with image (by dateFinished)
 const latestProject = computed(() => {
@@ -670,10 +754,13 @@ const PROJECT_TITLE_MAP = {
   'Collectivity: Gemeinsam zurück in die Zukunft': 'collectivity',
   'Defeat the Beast': 'defeatTheBeast',
   'escooty': 'escooty',
+  'Underwater8': 'underwater8',
+  'Galerie “Der Sturm”': 'galerieDerSturm',
   'pitips.de': 'pitipsDe',
+  'PARTiZiPATiONSHUB': 'partizipationsHub',
   'Bachelor Thesis Web App': 'bachelorThesisWebApp',
   'Informationen zu Bürgerbeteiligung': 'bachelorThesisWebApp',
-  'Vermittlung von grundlegenden Programmmierkonzepten mithilfe von VR': 'masterThesisGame',
+  'Vermittlung von grundlegenden Programmierkonzepten mithilfe von VR': 'masterThesisGame',
   'Optical Illusions in VR': 'opticalIllusionsVR',
   'Optische Illusionen in VR': 'opticalIllusionsVR',
   'Portfolio Website': 'portfolioWebsite',
@@ -808,6 +895,36 @@ const calculateFeaturedPairing = (projects) => {
   return pairingMap
 }
 
+// Pre-calculate layout to determine if items start on a new row
+const calculateLayout = (projects, pairingMap) => {
+  const layoutMap = {}
+  let row = 0
+  let col = 0
+  
+  for (let i = 0; i < projects.length; i++) {
+    const project = projects[i]
+    const isFeatured = project.featured
+    const isPaired = isFeatured && pairingMap[i]
+    const width = isFeatured ? (isPaired ? 3 : 4) : 2
+    
+    // Check if fits in current row
+    if (col + width > 6) {
+      // Wrap to next row
+      row++
+      col = 0
+    }
+    
+    layoutMap[i] = {
+      row,
+      colStart: col,
+      width
+    }
+    
+    col += width
+  }
+  return layoutMap
+}
+
 // Check if a featured project should get 3 columns (when on same row as another featured)
 const shouldGetThreeColumns = (project, index, pairingMap) => {
   return project.featured && pairingMap[index] === true
@@ -876,6 +993,34 @@ const closeVideoModal = () => {
   setTimeout(() => {
     currentVideo.value = null
   }, 300)
+}
+
+// Open gallery modal
+const openGalleryModal = (gallery) => {
+  currentGallery.value = gallery
+  currentGalleryIndex.value = 0
+  showGalleryModal.value = true
+  openModal(showGalleryModal)
+}
+
+// Close gallery modal
+const closeGalleryModal = () => {
+  showGalleryModal.value = false
+  setTimeout(() => {
+    currentGallery.value = []
+    currentGalleryIndex.value = 0
+  }, 300)
+}
+
+// Gallery navigation
+const nextImage = () => {
+  if (currentGallery.value.length === 0) return
+  currentGalleryIndex.value = (currentGalleryIndex.value + 1) % currentGallery.value.length
+}
+
+const prevImage = () => {
+  if (currentGallery.value.length === 0) return
+  currentGalleryIndex.value = (currentGalleryIndex.value - 1 + currentGallery.value.length) % currentGallery.value.length
 }
 
 // Email validation regex (compiled once)

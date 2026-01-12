@@ -441,11 +441,17 @@ nav a:hover {
   font-weight: 700;
 }
 
+.theme-toggle-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .theme-toggle-btn {
   background-color: transparent;
   color: var(--text-secondary);
   border: 1px solid var(--border-color);
-  padding: 0.5rem 1rem;
+  padding: .5rem;
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;

@@ -192,25 +192,19 @@
 }
 
 .home .section-header {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   margin-bottom: 3rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-  position: relative;
 }
 
 .home .section-title {
-  font-size: 2.5rem;
+  grid-column: 2;      /* echtes Zentrum */
   text-align: center;
-  margin-bottom: 0;
+  margin: 0;
+  font-size: 2.5rem;
   color: var(--text-accent, #33e5ff);
   position: relative;
-  padding-bottom: 1rem;
-  transition: color 0.3s ease;
-  flex: 1;
-  min-width: 0;
 }
 
 .home .section-header .toggle-projects-btn {
@@ -218,6 +212,12 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.home .btn-more {
+  grid-column: 3;
+  justify-self: end;
+  width: 15vw;
 }
 
 .home .section-title::after {
@@ -490,6 +490,12 @@
 .home .play-icon {
   font-size: 1.5rem;
   margin-left: 4px;
+  line-height: 1;
+}
+
+.home .gallery-icon {
+  font-size: 1.5rem;
+  margin-top: 4px;
   line-height: 1;
 }
 
@@ -809,7 +815,8 @@
   right: 1rem;
   background: none;
   border: none;
-  color: #e0e0e0;
+  color: #F5E6CC;
+  background-color: #33e5ff;
   font-size: 2rem;
   cursor: pointer;
   width: 40px;
@@ -822,9 +829,85 @@
   z-index: 1;
 }
 
+.home .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #33e5ff;
+  border: none;
+  color: #F5E6CC;
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.home .carousel-btn:hover {
+  background: #00d9ff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.home .carousel-arrow-right, .home .carousel-arrow-left {
+  display: block;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  transform: translateY(-0.05em);
+}
+
+.home .carousel-arrow-right {
+  margin-left: 3px;
+}
+
+.home .carousel-arrow-left {
+  margin-right: 3px;
+}
+
+.home .carousel-prev {
+  left: 20px;
+}
+
+.home .carousel-next {
+  right: 20px;
+}
+
+.home .carousel-indicators {
+  background-color: rgba(0, 136, 255, .5);
+  padding: .5rem;
+  border-radius: 10%;
+}
+
+
+.home .carousel-indicator-point {
+  width: 8px;
+  height: 8px;
+  margin: 2px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.home .carousel-indicator-point-selected {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #F5E6CC;
+  cursor: pointer;
+}
+
 .home .modal-close:hover {
   background-color: var(--accent-on-card, #D02F23);
   color: #F5E6CC;
+  transform: scale(1.1);
 }
 
 .home .modal-content h2 {
@@ -1174,6 +1257,12 @@
   .home .section-title {
     font-size: 2rem;
     width: 100%;
+  }
+
+  .home .btn-more {
+    grid-column: 3;
+    justify-self: end;
+    width: 15vw;
   }
 
   .home .projects-grid {

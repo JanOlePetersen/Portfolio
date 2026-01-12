@@ -14,6 +14,8 @@
     "researchProject": "Research Project",
     "playVideo": "Play Video",
     "closeVideo": "Close Video",
+    "viewGallery": "View Gallery",
+    "closeGallery": "Close Gallery",
     "playOnItchIo": "Play on itch.io",
     "visitWebsite": "Visit Website",
     "visitMeetUpWebsite": "Visit the Meet-Up Website",
@@ -69,31 +71,54 @@
         "text1": "A multiplayer puzzle game for public spaces using custom foot pedal controllers.",
         "text2": "Cooperative multiplayer game with resource management and enemy mechanics, developed in Godot Engine 4.4 using GDScript. The focus was on the <span class=\"highlight\">intuitive use of non-traditional input devices</span>. Implemented a <span class=\"highlight\">cooperative level system with multiple difficulty levels and enemy types</span>, complemented by visual and acoustic design following the '8 Kinds of Fun' framework."
       },
+
       "collectivity": {
         "text1": "A Serious Game that makes ten Media Informatics Meet-Ups experienceable through interactive gameplay.",
         "text2": "Level-based Serious Game, developed with Unity and C#, where each level playfully represents a Meet-Up theme. The central task was the <span class=\"highlight\">translation of abstract content into understandable game mechanics</span>. This was supported by a <span class=\"highlight\">playtesting and usability framework</span> for clear learning and game flows."
       },
+
       "defeatTheBeast": {
         "text1": "A browser-based action game with a dynamic difficulty system, regenerating boss, and permanent time pressure.",
         "text2": "The challenge lay in <span class=\"highlight\">balancing time pressure, resource management, and enemy behavior</span>. Complemented by a <span class=\"highlight\">progression and upgrade system with exploration and multiple difficulty levels</span>, implemented in Unity (LTS 2022.3.14) with C#."
       },
+
+      "underwater8": {
+        "title": "Underwater 8",
+        "text1": "A VR anomaly hunting game set in a looping submarine corridor, inspired by Platform 8.",
+        "text2": "Developed in Unity and C# for Virtual Reality. The focus was on <span class=\"highlight\">atmospheric storytelling and tension building</span> in a confined VR environment. Complemented by a <span class=\"highlight\">randomized system for anomalies</span> that challenges the player's perception and memory."
+      },
+
+      "galerieDerSturm": {
+        "text1": "A VR reconstruction of the avant-garde art gallery 'Der Sturm' in Berlin, founded by Herwarth Walden.",
+        "text2": "Developed in Unreal Engine. The project recreates the historical atmosphere of the 1920s. Implemented the <span class=\"highlight\">locomotion systems (teleport & stick movement)</span>, <span class=\"highlight\">wall collision prevention</span>, and the <span class=\"highlight\">guidance system</span> through the exhibition rooms."
+      },
+
       "pitipsDe": {
         "text1": "A research platform for networking informal caregivers with scientific projects.",
         "text2": "Web platform with map, search, and filter functions for quick project finding. The focus was on the <span class=\"highlight\">understandable presentation of complex research content</span>. Implemented a <span class=\"highlight\">user-centered navigation and onboarding system</span> for a low entry barrier."
       },
+
+      "partizipationsHub": {
+        "text1": "A web application for organizing events and promoting exchange between science and care.",
+        "text2": "Developed with Ruby on Rails and Docker. The focus was on the <span class=\"highlight\">intuitive management of events</span> as well as the <span class=\"highlight\">technical implementation of a scalable infrastructure</span>."
+      },
+
       "escooty": {
         "text1": "A web application for visualizing public mobility data for traffic planning.",
         "text2": "Multi-layer map system for mobility and infrastructure data, developed with Vue.js, Leaflet, and Turf.js. The central challenge was the <span class=\"highlight\">integration and visualization of heterogeneous geodata</span>. Complemented by <span class=\"highlight\">interactive planning tools for location and coverage analysis</span>."
       },
+
       "bachelorThesisWebApp": {
         "text1": "A web application for presenting citizen participation projects.",
         "text2": "Accessible information system following Human-Centered Design principles with Vue.js. The focus was on the <span class=\"highlight\">clear structuring of complex project information</span> as well as the implementation of <span class=\"highlight\">accessibility features for broad usability</span>."
       },
+
       "masterThesisGame": {
         "title": "Teaching basic programming concepts using VR",
         "text1": "A hybrid learning system consisting of VR and web-based modules for teaching programming concepts.",
         "text2": "Combination of web-based learning modules and immersive VR training with Unity. The central challenge was the <span class=\"highlight\">transfer of abstract programming logic into interactive VR experiences</span>. Developed a <span class=\"highlight\">didactically combined learning system of VR nuggets and web modules</span>, whose learning success was evaluated."
       },
+      
       "opticalIllusionsVR": {
         "title": "Optical Illusions in VR",
         "text1": "A VR application that makes optical illusions and Impossible Spaces experienceable through movement.",
@@ -183,6 +208,6 @@
     "title": "Games"
   },
   "websites": {
-    "title": "Website"
+    "title": "Websites"
   }
 }

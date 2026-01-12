@@ -14,6 +14,8 @@
     "researchProject": "Forschungsprojekt",
     "playVideo": "Video abspielen",
     "closeVideo": "Video schließen",
+    "viewGallery": "Galerie ansehen",
+    "closeGallery": "Galerie schließen",
     "keywords": {
       "Unity": "Unity",
       "VR": "VR",
@@ -80,9 +82,25 @@
         "text2": "Die Herausforderung lag im <span class=\"highlight\">Balancing von Zeitdruck, Ressourcenmanagement und Gegnerverhalten</span>. Ergänzt wurde dies durch ein <span class=\"highlight\">Progressions- und Upgradesystem mit Erkundung und mehreren Schwierigkeitsgraden</span>, umgesetzt in Unity (LTS 2022.3.14) mit C#."
       },
 
+      "underwater8": {
+        "title": "Underwater 8",
+        "text1": "Ein VR-Anomalie-Suchspiel in einem U-Boot-Korridor, inspiriert von Platform 8.",
+        "text2": "Entwickelt in Unity und C# für Virtual Reality. Der Fokus lag auf <span class=\"highlight\">atmosphärischem Storytelling und Spannungsaufbau</span> in einer engen VR-Umgebung. Ergänzt durch ein <span class=\"highlight\">zufallsbasiertes System für Anomalien</span>, das die Wahrnehmung und das Gedächtnis des Spielers herausfordert."
+      },
+
+      "galerieDerSturm": {
+        "text1": "Eine VR-Rekonstruktion der Avantgarde-Kunstgalerie „Der Sturm“ in Berlin, gegründet von Herwarth Walden.",
+        "text2": "Entwickelt in der Unreal Engine. Das Projekt rekonstruiert die historische Atmosphäre der 1920er Jahre. Implementiert wurden die <span class=\"highlight\">Fortbewegungssysteme (Teleport & Stick-Movement)</span>, die <span class=\"highlight\">Wandkollisionsvermeidung</span> sowie das <span class=\"highlight\">Leitsystem</span> durch die Ausstellungsräume."
+      },
+
       "pitipsDe": {
         "text1": "Eine Forschungsplattform zur Vernetzung informell Pflegender mit wissenschaftlichen Projekten.",
         "text2": "Webplattform mit Karten-, Such- und Filterfunktionen zur schnellen Projektfindung. Der Fokus lag auf der <span class=\"highlight\">verständlichen Aufbereitung komplexer Forschungsinhalte</span>. Umgesetzt wurde ein <span class=\"highlight\">nutzerzentriertes Navigations- und Onboarding-System</span> für eine niedrige Einstiegshürde."
+      },
+
+      "partizipationsHub": {
+        "text1": "Eine Webanwendung zur Organisation von Veranstaltungen und Förderung des Austauschs zwischen Wissenschaft und Pflege.",
+        "text2": "Entwickelt mit Ruby on Rails und Docker. Der Fokus lag auf der <span class=\"highlight\">intuitiven Verwaltung von Veranstaltungen</span> sowie der <span class=\"highlight\">technischen Umsetzung einer skalierbaren Infrastruktur</span>."
       },
 
       "escooty": {
@@ -190,6 +208,6 @@
     "title": "Spiele"
   },
   "websites": {
-    "title": "Webseite"
+    "title": "Webseiten"
   }
 }

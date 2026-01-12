@@ -8,9 +8,16 @@
       "released": true,
       "universityProject": true,
       "dateFinished": "2023-09",
-      "keywords": ["Solo Project", "Vue.js", "Bachelor Project", "Web Development", "citizen participation", "relevant information", "information presentation"],
+      "keywords": ["Solo Project", "Vue.js", "Bachelor Project", "Web Development", "citizen participation", "relevant information", "information presentation", "Bootstrap"],
       "image": "izb.png",
       "video": null,
+      "gallery": [
+        "/Buergerbeteiligung/1.png",
+        "/Buergerbeteiligung/2.png",
+        "/Buergerbeteiligung/3.png",
+        "/Buergerbeteiligung/4.png",
+        "/Buergerbeteiligung/5.png"
+      ],
       "links": [
         {
           "label": "View on GitHub",
@@ -30,6 +37,7 @@
       "keywords": ["Team Project", "Unity", "VR", "Optische Illusionen"],
       "image": "/optical.png",
       "video": "https://www.youtube.com/embed/TGucT28_IwM?si=oni3XH7A6W8rqNDQ",
+      "gallery": [ ],
       "links": [
         {
           "label": "View on GitHub",
@@ -49,6 +57,7 @@
       "keywords": [ "Solo Project", "Unity", "Meet-Up Spiel", "Browser Game"],
       "image": "praktikum.png",
       "video": null,
+      "gallery": [ ],
       "links": [
         {
           "label": "Play on itch.io",
@@ -63,7 +72,35 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
+      "title": "Underwater8",
+      "category": "Game Development",
+      "featured": false,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2025-01",
+      "keywords": [ "Team Project", "Unity", "VR", "Puzzle"],
+      "image": "underwater.png",
+      "video": "https://youtu.be/WQ9iJW434xE",
+      "gallery": [ ],
+      "links": []
+    },
+    {
+      "id": 4,
+      "title": "Galerie “Der Sturm”",
+      "category": "Game Development",
+      "featured": false,
+      "released": true,
+      "universityProject": true,
+      "dateFinished": "2025-01",
+      "keywords": ["Team Project", "Unreal Engine", "VR", "Locomotion"],
+      "image": "galerie.png",
+      "video": "https://youtu.be/pqr0YPnA1rc",
+      "gallery": [ ],
+      "links": []
+    },
+    {
+      "id": 5,
       "title": "Defeat the Beast",
       "category": "Game Development",
       "featured": true,
@@ -73,6 +110,7 @@
       "keywords": ["Team Project", "Unity", "Action", "Browser Game"],
       "image": "/home_menue2.png",
       "video": "https://youtu.be/edcIjlMUTcs",
+      "gallery": [ ],
       "links": [
         {
           "label": "Play on itch.io",
@@ -87,16 +125,17 @@
       ]
     },
     {
-      "id": 3,
+      "id": 6,
       "title": "Welt-Aal",
       "category": "Game Development",
       "featured": true,
       "released": true,
       "universityProject": true,
       "dateFinished": "2025-08",
-      "keywords": [ "Team Project", "Godot", "Puzzle","Browser Game"],
+      "keywords": [ "Team Project", "Godot", "Puzzle", "Browser Game"],
       "image": "/Boot_Splash.png",
-      "video": null,
+      "video": "https://youtu.be/yqeSK44k56I",
+      "gallery": [ ],
       "links": [
         {
           "label": "Play on itch.io",
@@ -111,7 +150,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 7,
       "title": "escooty",
       "category": "Web Development",
       "featured": false,
@@ -121,6 +160,11 @@
       "keywords": ["Team Project", "Vue.js", "Web Development", "Hackathon"],
       "image": "escooty.ico",
       "video": null,
+      "gallery": [
+        "/escooty/1.png",
+        "/escooty/2.png",
+        "/escooty/3.png"
+      ],
       "links": [
         {
           "label": "View on GitHub",
@@ -130,16 +174,49 @@
       ]
     },
     {
-      "id": 5,
+      "id": 8,
+      "title": "PARTiZiPATiONSHUB",
+      "category": "Web Development",
+      "featured": false,
+      "released": true,
+      "researchProject": true,
+      "dateFinished": "2025-03",
+      "keywords": ["Team Project", "Ruby on Rails", "Web Development", "Docker"],
+      "image": "/Hub_Logo.png",
+      "video": null,
+      "gallery": [
+        "/PartizipationsHub/Hub_img_1.png",
+        "/PartizipationsHub/Hub_img_2.png",
+        "/PartizipationsHub/Hub_img_3.png",
+        "/PartizipationsHub/Hub_img_4.png",
+        "/PartizipationsHub/Hub_img_5.png"
+      ],
+      "links": [
+        {
+          "label": "Visit Website",
+          "url": "https://hub.pitips.de/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 9,
       "title": "pitips.de",
       "category": "Web Development",
       "featured": true,
       "released": true,
       "researchProject": true,
       "dateFinished": "2025-11",
-      "keywords": ["Team Project", "Nuxt.js", "Web Development"],
+      "keywords": ["Team Project", "Nuxt.js", "Web Development", "CMS"],
       "image": "/PiTiPS_Logo.png",
       "video": null,
+      "gallery": [
+        "/pitips/1.png",
+        "/pitips/2.png",
+        "/pitips/3.png",
+        "/pitips/4.png",
+        "/pitips/5.png"
+      ],
       "links": [
         {
           "label": "Visit Website",
@@ -149,8 +226,8 @@
       ]
     },
     {
-      "id": 11,
-      "title": "Vermittlung von grundlegenden Programmmierkonzepten mithilfe von VR",
+      "id": 10,
+      "title": "Vermittlung von grundlegenden Programmierkonzepten mithilfe von VR",
       "category": "Game Development",
       "featured": true,
       "released": true,
@@ -159,6 +236,7 @@
       "keywords": ["Solo Project", "Unity", "VR", "Game Development", "Master Thesis", "Virtual Reality Nuggets", "Immersive Learning"],
       "image": "/mq2.png",
       "video": "https://youtu.be/e1o862HUclU",
+      "gallery": [ ],
       "links": [
         {
           "label": "View on GitHub",
