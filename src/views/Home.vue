@@ -17,7 +17,7 @@
     
     <main id="main-content" tabindex="-1" role="main">
       <!-- Hero Section -->
-      <section id="home" class="hero" :style="latestProject && latestProject.image ? { backgroundImage: `url(${getImagePath(latestProject.image)})` } : {}">
+      <section id="home" class="hero" :style="{ backgroundImage: `url(/Portfolio/mq2.png)` }"><!-- latestProject && latestProject.image ? { backgroundImage: `url(${getImagePath(latestProject.image)})` } : {} -->
         <div class="hero-content">
           <h1 class="hero-title">Portfolio</h1>
           <p class="hero-subtitle" v-html="t('home.subtitle')"></p>
@@ -766,7 +766,8 @@ const PROJECT_TITLE_MAP = {
   'Portfolio Website': 'portfolioWebsite',
   'Interactive Dashboard': 'interactiveDashboard',
   'WebGL Game Engine': 'webglGameEngine',
-  'Social Media App': 'socialMediaApp'
+  'Social Media App': 'socialMediaApp',
+  'Zukunftsentscheid Hamburg': 'zukunftsentscheidHamburg'
 }
 
 const getProjectTranslationKey = (title) => PROJECT_TITLE_MAP[title] || null

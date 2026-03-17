@@ -18,13 +18,7 @@
         "/Buergerbeteiligung/4.png",
         "/Buergerbeteiligung/5.png"
       ],
-      "links": [
-        {
-          "label": "View on GitHub",
-          "url": "https://github.com/JanOlePetersen/BA-DiskurseDarstellenWebApp",
-          "external": true
-        }
-      ]
+      "links": [ ]
     },
     {
       "id": 1,
@@ -38,13 +32,7 @@
       "image": "/optical.png",
       "video": "https://www.youtube.com/embed/TGucT28_IwM?si=oni3XH7A6W8rqNDQ",
       "gallery": [ ],
-      "links": [
-        {
-          "label": "View on GitHub",
-          "url": "https://github.com/JanOlePetersen/VPMedien-WS2023-Optical-Illusions-VR-1",
-          "external": true
-        }
-      ]
+      "links": [ ]
     },
     {
       "id": 2,
@@ -116,11 +104,6 @@
           "label": "Play on itch.io",
           "url": "https://olepetersen.itch.io/defeat-the-beast",
           "external": true
-        },
-        {
-          "label": "View on GitHub",
-          "url": "https://github.com/JanOlePetersen/DefeatTheBeast",
-          "external": true
         }
       ]
     },
@@ -141,11 +124,6 @@
           "label": "Play on itch.io",
           "url": "https://olepetersen.itch.io/welt-aal",
           "external": true
-        },
-        {
-          "label": "View on GitHub",
-          "url": "https://github.com/JanOlePetersen/Welt-Aal",
-          "external": true
         }
       ]
     },
@@ -165,13 +143,7 @@
         "/escooty/2.png",
         "/escooty/3.png"
       ],
-      "links": [
-        {
-          "label": "View on GitHub",
-          "url": "https://github.com/JanOlePetersen/escooty",
-          "external": true
-        }
-      ]
+      "links": [ ]
     },
     {
       "id": 8,
@@ -237,10 +209,24 @@
       "image": "/mq2.png",
       "video": "https://youtu.be/e1o862HUclU",
       "gallery": [ ],
-      "links": [
+      "links": [ ]
+    },
+    {
+      "id": 11,
+      "title": "Zukunftsentscheid Hamburg",
+      "category": "Web Development",
+      "featured": false,
+      "released": true,
+      "universityProject": false,
+      "dateFinished": "2026-03",
+      "keywords": ["Team Project", "Next.js", "Web Development"],
+      "image": "/logo.svg",
+      "video": "",
+      "gallery": [ ],
+      "links": [ 
         {
-          "label": "View on GitHub",
-          "url": "https://github.com/JanOlePetersen/MA_Branch_blox-a-plant",
+          "label": "Visit Website",
+          "url": "https://zukunftsentscheid-hamburg.de",
           "external": true
         }
       ]

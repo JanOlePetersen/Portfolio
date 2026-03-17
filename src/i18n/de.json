@@ -43,7 +43,8 @@
       "information presentation": "Darstellung von Informationen",
       "Bürgerbeteiligung": "Bürgerbeteiligung",
       "relevante Informationen": "relevante Informationen",
-      "Darstellung von Informationen": "Darstellung von Informationen"
+      "Darstellung von Informationen": "Darstellung von Informationen",
+      "zukunftsentscheid Hamburg": "zukunftsentscheid Hamburg"
     },
     "playOnItchIo": "Auf itch.io spielen",
     "visitWebsite": "Website besuchen",
@@ -123,6 +124,12 @@
         "title": "Optische Illusionen in VR",
         "text1": "Eine VR-Anwendung, die optische Illusionen und Impossible Spaces durch Bewegung erfahrbar macht.",
         "text2": "Der Fokus lag auf dem <span class=\"highlight\">gezielten Einsatz von Wahrnehmungstäuschungen zur Raumverfälschung</span> sowie <span class=\"highlight\">bewegungsbasierten Puzzle-Mechaniken</span>."
+      },
+
+      "zukunftsentscheidHamburg": {
+        "title": "Zukunftsentscheid Hamburg",
+        "text1": "Der Hamburger Zukunftsentscheid will Klimapolitik sozial, planbar und verantwortungsbewusst gestalten.",
+        "text2": "Mein Fokus lag auf der Aktualisierung von Informationen und Bilders, sowie auf der Erstellung der Seite <span class=\"highlight\">Veranstaltungen</span>."
       }
     },
     "footer": {
