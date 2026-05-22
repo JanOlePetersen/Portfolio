@@ -123,6 +123,12 @@
         "title": "Optical Illusions in VR",
         "text1": "A VR application that makes optical illusions and Impossible Spaces experienceable through movement.",
         "text2": "The focus was on the <span class=\"highlight\">targeted use of perceptual illusions for spatial distortion</span> as well as <span class=\"highlight\">movement-based puzzle mechanics</span>."
+      },
+
+      "zukunftsentscheidHamburg": {
+        "title": "Zukunftsentscheid Hamburg",
+        "text1": "The Hamburg Zukunftsentscheid aims to shape climate policy in a social, predictable, and responsible way.",
+        "text2": "My focus was on updating information and images, as well as creating the <span class=\"highlight\">Events and Funding</span> page."
       }
     },
     "footer": {
