@@ -43,7 +43,7 @@
                 :aria-label="getEnglishText('home.startupModal.darkMode')"
                 :aria-pressed="tempTheme === 'dark'"
               >
-                <span class="theme-icon"><img :src="getImagePath('/moon.png')" style="width: 2rem;"/></span>
+                <span class="theme-icon"><img :src="getImagePath('/moon.png')" style="width: 2rem;" alt=""/></span>
                 {{ getEnglishText('home.startupModal.darkMode') }}
               </button>
               <button 
@@ -53,7 +53,7 @@
                 :aria-label="getEnglishText('home.startupModal.lightMode')"
                 :aria-pressed="tempTheme === 'light'"
               >
-                <span class="theme-icon"><img :src="getImagePath('/sun.png')" style="width: 2rem;"/></span>
+                <span class="theme-icon"><img :src="getImagePath('/sun.png')" style="width: 2rem;" alt=""/></span>
                 {{ getEnglishText('home.startupModal.lightMode') }}
               </button>
             </div>
@@ -119,8 +119,8 @@
                 :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
                 :title="theme === 'dark' ? 'Light Mode' : 'Dark Mode'"
               >
-                <span v-if="theme === 'dark'"><img :src="getImagePath('/sun.png')" style="width: 1.5rem;"/></span>
-                <span v-else><img :src="getImagePath('/moon.png')" style="width: 1.5rem;"/></span>
+                <span v-if="theme === 'dark'"><img :src="getImagePath('/sun.png')" style="width: 1.5rem;" alt=""/></span>
+                <span v-else><img :src="getImagePath('/moon.png')" style="width: 1.5rem;" alt=""/></span>
               </button>
             </div>
           </li>
@@ -134,7 +134,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick, watch } from 'vue'
 import { useI18n } from './composables/useI18n'
 import { useTheme } from './composables/useTheme'
 import { useCookieBanner } from './composables/useCookieBanner'
@@ -148,6 +148,11 @@ const { checkCookieBanner } = useCookieBanner()
 const showStartupModal = ref(false)
 const tempLanguage = ref('en')
 const tempTheme = ref('dark')
+
+// Dynamically update HTML lang attribute for Screen Readers and SEO
+watch(language, (newLang) => {
+  document.documentElement.lang = newLang || 'en'
+}, { immediate: true })
 
 // Function to get English translations for startup modal (always in English)
 const getEnglishText = (key) => {
@@ -232,6 +237,8 @@ const getImagePath = (imagePath) => {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-primary);
 }
 
 :root {
@@ -258,6 +265,26 @@ html {
   --accent-color: #0088ff;
   --border-color: #ddd;
   --nav-bg: rgba(245, 245, 245, 0.95);
+}
+
+/* Global Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
 }
 
 body {
@@ -502,6 +529,16 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-card);
+}
+
+.startup-modal-content::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+
+.startup-modal-content::-webkit-scrollbar-thumb {
+  border: 2px solid var(--bg-card);
 }
 
 .startup-modal-content h2 {
@@ -526,6 +563,16 @@ nav a:hover {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--bg-card);
+}
+
+.startup-options::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+
+.startup-options::-webkit-scrollbar-thumb {
+  border: 2px solid var(--bg-card);
 }
 
 .startup-option-group h3 {

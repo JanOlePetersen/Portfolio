@@ -6,10 +6,16 @@
     "getInTouch": "Kontakt aufnehmen",
     "showAllProjects": "Alle Projekte anzeigen",
     "showFeaturedOnly": "Nur Featured anzeigen",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
     "skills": "Fähigkeiten & Technologien",
     "gameDev": "Spieleentwicklung",
     "webDev": "Webentwicklung",
     "tools": "Tools & Sonstiges",
+    "indieGames": "Indie Spiele",
+    "academicGames": "Universitätsprojekte",
+    "indieProject": "Indie-Projekt",
+    "joinDiscord": "Discord beitreten",
     "universityProject": "Universitätsprojekt",
     "researchProject": "Forschungsprojekt",
     "playVideo": "Video abspielen",
@@ -44,10 +50,24 @@
       "Bürgerbeteiligung": "Bürgerbeteiligung",
       "relevante Informationen": "relevante Informationen",
       "Darstellung von Informationen": "Darstellung von Informationen",
-      "zukunftsentscheid Hamburg": "zukunftsentscheid Hamburg"
+      "zukunftsentscheid Hamburg": "Zukunftsentscheid Hamburg",
+      "Bootstrap": "Bootstrap",
+      "Unreal Engine": "Unreal Engine",
+      "Locomotion": "Fortbewegung",
+      "Ruby on Rails": "Ruby on Rails",
+      "Docker": "Docker",
+      "CMS": "CMS",
+      "Next.js": "Next.js",
+      "Game Studio": "Spielestudio",
+      "City Builder": "Aufbauspiel",
+      "RTS": "Echtzeitstrategie",
+      "Procedural Generation": "Prozedurale Generierung",
+      "Fantasy": "Fantasy"
     },
     "playOnItchIo": "Auf itch.io spielen",
+    "playDemoOnItchIo": "Demo auf itch.io spielen",
     "visitWebsite": "Website besuchen",
+    "visitDeveloperWebsite": "Entwickler-Website besuchen",
     "visitMeetUpWebsite": "Meet-Up Website besuchen",
     "viewOnGitHub": "Auf GitHub ansehen",
     "contactForm": {
@@ -130,6 +150,18 @@
         "title": "Zukunftsentscheid Hamburg",
         "text1": "Der Hamburger Zukunftsentscheid will Klimapolitik sozial, planbar und verantwortungsbewusst gestalten.",
         "text2": "Mein Fokus lag auf der Aktualisierung von Informationen und Bilders, sowie auf der Erstellung der Seite <span class=\"highlight\">Veranstaltungen und Fördern</span>."
+      },
+
+      "axiomForge": {
+        "title": "Axiom Forge Webseite",
+        "text1": "Design und Entwicklung der offiziellen Website für mein zukünftiges Spielestudio, Axiom Forge.",
+        "text2": "Der Fokus lag auf einem <span class=\"highlight\">responsiven Frontend</span> sowie dem Aufbau von <span class=\"highlight\">Branding und Corporate Identity</span> inklusive SEO-Grundlagen. Aktuell wird dort die Terra Arcana Demo präsentiert, zukünftig dient sie durch die <span class=\"highlight\">Integration von Community- und Projektseiten</span> als zentraler Hub für das Studio."
+      },
+
+      "terraArcana": {
+        "title": "Axiom Forge / Terra Arcana",
+        "text1": "Ein ambitionierter Hybrid aus Aufbau-Wirtschaftssimulation und Echtzeitstrategie, angesiedelt in einer prozedural generierten, mythologischen römischen Fantasy-Welt.",
+        "text2": "Eigenständige Entwicklung eines kommerziellen Indie-Spiels mit Fokus auf <span class=\"highlight\">Gameplay-Programmierung und Systemdesign</span> sowie <span class=\"highlight\">UI/UX-Entwicklung</span>. Zu den technischen Features gehören <span class=\"highlight\">tiefgreifendes Ressourcenmanagement mit dynamischen Jahreszeiten</span>, komplexe Militärmechaniken mit römischen Legionen und ein riesiger Forschungsbaum. Ein Kultursystem im Lategame ermöglicht die <span class=\"highlight\">Transformation der Zivilisation in Fantasy-Rassen</span>."
       }
     },
     "footer": {
@@ -160,13 +192,11 @@
       "lastUpdated": "Zuletzt aktualisiert:",
       "responsible": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
       "name": "Portfolio",
-      "address": "Musterstraße 123",
-      "postalCode": "12345 Musterstadt",
+      "address": "Im Grünen Winkel 2A",
+      "postalCode": "23843 Travenbrück",
       "country": "Deutschland",
       "contact": "Kontakt",
       "email": "E-Mail",
-      "phone": "Telefon",
-      "phoneNumber": "+49 (0) 123 456789",
       "websiteHost": "Website-Hosting",
       "websiteHostText": "Diese Website wird gehostet von einem externen Hosting-Anbieter. Der Hosting-Anbieter ist für die technische Bereitstellung und Verfügbarkeit der Website verantwortlich. Für den Inhalt der Website ist der oben genannte Verantwortliche zuständig.",
       "liability": "Haftungsausschluss",

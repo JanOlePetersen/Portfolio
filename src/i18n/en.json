@@ -6,10 +6,16 @@
     "getInTouch": "Get In Touch",
     "showAllProjects": "Show All Projects",
     "showFeaturedOnly": "Show Featured Only",
+    "showMore": "Show More",
+    "showLess": "Show Less",
     "skills": "Skills & Technologies",
     "gameDev": "Game Development",
     "webDev": "Web Development",
     "tools": "Tools & Other",
+    "indieGames": "Indie Games",
+    "academicGames": "Academic Projects",
+    "indieProject": "Indie Project",
+    "joinDiscord": "Join Discord",
     "universityProject": "University Project",
     "researchProject": "Research Project",
     "playVideo": "Play Video",
@@ -17,7 +23,9 @@
     "viewGallery": "View Gallery",
     "closeGallery": "Close Gallery",
     "playOnItchIo": "Play on itch.io",
+    "playDemoOnItchIo": "Play demo on itch.io",
     "visitWebsite": "Visit Website",
+    "visitDeveloperWebsite": "Visit developer's website",
     "visitMeetUpWebsite": "Visit the Meet-Up Website",
     "viewOnGitHub": "View on GitHub",
     "keywords": {
@@ -47,7 +55,20 @@
       "information presentation": "Information Presentation",
       "Bürgerbeteiligung": "Citizen Participation",
       "relevante Informationen": "Relevant Information",
-      "Darstellung von Informationen": "Information Presentation"
+      "Darstellung von Informationen": "Information Presentation",
+      "zukunftsentscheid Hamburg": "Zukunftsentscheid Hamburg",
+      "Bootstrap": "Bootstrap",
+      "Unreal Engine": "Unreal Engine",
+      "Locomotion": "Locomotion",
+      "Ruby on Rails": "Ruby on Rails",
+      "Docker": "Docker",
+      "CMS": "CMS",
+      "Next.js": "Next.js",
+      "Game Studio": "Game Studio",
+      "City Builder": "City Builder",
+      "RTS": "RTS",
+      "Procedural Generation": "Procedural Generation",
+      "Fantasy": "Fantasy"
     },
     "contactForm": {
       "title": "Contact",
@@ -129,6 +150,18 @@
         "title": "Zukunftsentscheid Hamburg",
         "text1": "The Hamburg Zukunftsentscheid aims to shape climate policy in a social, predictable, and responsible way.",
         "text2": "My focus was on updating information and images, as well as creating the <span class=\"highlight\">Events and Funding</span> page."
+      },
+
+      "axiomForge": {
+        "title": "Axiom Forge Website",
+        "text1": "Design and development of the official website for my future game studio, Axiom Forge.",
+        "text2": "The focus was on a <span class=\"highlight\">responsive frontend</span> and establishing the <span class=\"highlight\">branding and corporate identity</span>, including basic SEO. Currently showcasing the Terra Arcana demo, it will serve as a central hub for the studio through the <span class=\"highlight\">integration of community and project pages</span>."
+      },
+      
+      "terraArcana": {
+        "title": "Axiom Forge / Terra Arcana",
+         "text1": "An ambitious hybrid of city-building economic simulation and real-time strategy, set in a procedurally generated, mythological Roman fantasy world.",
+        "text2": "Independent development of a commercial indie game focusing on <span class=\"highlight\">gameplay programming and system design</span> as well as <span class=\"highlight\">UI/UX development</span>. Technical features include <span class=\"highlight\">deep resource management with dynamic seasons</span>, complex military mechanics with Roman Legions, and a massive tech tree. A late-game culture system allows players to <span class=\"highlight\">transform their civilization into fantasy races</span>."
       }
     },
     "footer": {
@@ -155,17 +188,15 @@
       "contactText": "If you have questions about this Privacy Policy, please contact me via email."
     },
     "imprint": {
-      "title": "Imprint",
-      "lastUpdated": "Last updated:",
-      "responsible": "Responsible for Content",
+      "title": "Impressum",
+      "lastUpdated": "Zuletzt aktualisiert:",
+      "responsible": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
       "name": "Portfolio",
-      "address": "Sample Street 123",
-      "postalCode": "12345 Sample City",
-      "country": "Germany",
-      "contact": "Contact",
-      "email": "Email",
-      "phone": "Phone",
-      "phoneNumber": "+49 (0) 123 456789",
+      "address": "Im Grünen Winkel 2A",
+      "postalCode": "23843 Travenbrück",
+      "country": "Deutschland",
+      "contact": "Kontakt",
+      "email": "E-Mail",
       "websiteHost": "Website Hosting",
       "websiteHostText": "This website is hosted by an external hosting provider. The hosting provider is responsible for the technical provision and availability of the website. The content of the website is the responsibility of the person mentioned above.",
       "liability": "Liability Disclaimer",

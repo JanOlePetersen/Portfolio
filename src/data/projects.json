@@ -225,7 +225,7 @@
       "featured": false,
       "released": true,
       "universityProject": false,
-      "dateFinished": "2026-05",
+      "dateFinished": "2026-06",
       "keywords": ["Team Project", "Next.js", "Web Development"],
       "image": "/logo.svg",
       "video": "",
@@ -234,6 +234,55 @@
         {
           "label": "Visit Website",
           "url": "https://zukunftsentscheid-hamburg.de",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Axiom Forge Webseite",
+      "category": "Web Development",
+      "featured": false,
+      "released": true,
+      "universityProject": false,
+      "dateFinished": "2026-06",
+      "keywords": ["Vue.js", "Web Development", "Game Studio"],
+      "image": "/AF-logo.png",
+      "video": "",
+      "gallery": [ ],
+      "links": [ 
+        {
+          "label": "Visit Website",
+          "url": "https://axiom-forge.de",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Axiom Forge / Terra Arcana",
+      "category": "Game Development",
+      "featured": true,
+      "released": false,
+      "universityProject": false,
+      "dateFinished": "2027-00",
+      "keywords": [ "Solo Indie Game Development", "Godot", "City Builder", "RTS", "Procedural Generation", "Fantasy" ],
+      "image": "/TerraArcana.png",
+      "video": "",
+      "gallery": [
+        "/terra-arcana/0.png",
+        "/terra-arcana/1.png",
+        "/terra-arcana/2.png"
+      ],
+      "links": [
+        {
+          "label": "Play demo on itch.io",
+          "url": "https://axiom-forge.itch.io/terra-arcana",
+          "external": true
+        },
+        {
+          "label": "Visit developer's website",
+          "url": "https://www.axiom-forge.de",
           "external": true
         }
       ]

@@ -1,23 +1,28 @@
 <template>
   <div class="home" :style="dynamicStyles">
     <!-- Cookie Consent Banner -->
-    <div v-if="showCookieBanner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-modal="true">
+    <div v-if="showCookieBanner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title"
+      aria-modal="true">
       <div class="cookie-banner-content">
         <div class="cookie-banner-text" :lang="language">
           <h3 id="cookie-banner-title">{{ getCookieBannerText('home.cookieBanner.title') }}</h3>
           <p>{{ getCookieBannerText('home.cookieBanner.text') }}</p>
         </div>
         <div class="cookie-banner-buttons" :lang="language">
-          <button @click="acceptCookies" class="btn btn-primary">{{ getCookieBannerText('home.cookieBanner.accept') }}</button>
-          <button @click="rejectCookies" class="btn btn-secondary">{{ getCookieBannerText('home.cookieBanner.reject') }}</button>
-          <a href="#privacy-policy" @click="scrollTo('privacy-policy')" class="cookie-link">{{ getCookieBannerText('home.cookieBanner.learnMore') }}</a>
+          <button @click="acceptCookies" class="btn btn-primary">{{ getCookieBannerText('home.cookieBanner.accept')
+            }}</button>
+          <button @click="rejectCookies" class="btn btn-secondary">{{ getCookieBannerText('home.cookieBanner.reject')
+            }}</button>
+          <a href="#privacy-policy" @click="scrollTo('privacy-policy')" class="cookie-link">{{
+            getCookieBannerText('home.cookieBanner.learnMore') }}</a>
         </div>
       </div>
     </div>
-    
+
     <main id="main-content" tabindex="-1" role="main">
       <!-- Hero Section -->
-      <section id="home" class="hero" :style="{ backgroundImage: `url(/Portfolio/mq2.png)` }"><!-- latestProject && latestProject.image ? { backgroundImage: `url(${getImagePath(latestProject.image)})` } : {} -->
+      <section id="home" class="hero" :style="{ backgroundImage: `url(/Portfolio/mq2.png)` }">
+        <!-- latestProject && latestProject.image ? { backgroundImage: `url(${getImagePath(latestProject.image)})` } : {} -->
         <div class="hero-content">
           <h1 class="hero-title">Portfolio</h1>
           <p class="hero-subtitle" v-html="t('home.subtitle')"></p>
@@ -81,39 +86,25 @@
             {{ getShowMoreText(showAllWeb) }}
           </button>
         </div>
-        
 
         <div class="project-category" v-if="displayedWebProjects.length > 0">
           <div class="projects-grid">
-            <div 
-              v-for="(project, index) in displayedWebProjects" 
-              :key="project.id"
-              class="project-card"
-              :class="{ 
-                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && !(index === displayedWebProjects.length - 1 && shouldGetThreeColumns(project, index, webPairingMap)),
-                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, webPairingMap),
-                'project-card-last': index === displayedWebProjects.length - 1,
-                'project-card-last-featured': index === displayedWebProjects.length - 1 && project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && webLayoutMap[index] && webLayoutMap[index].colStart === 0,
-                'project-card-last-unfeatured': index === displayedWebProjects.length - 1 && !project.featured
-              }"
-            >
+            <div v-for="(project, index) in displayedWebProjects" :key="project.id" class="project-card" :class="{
+              'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && !(index === displayedWebProjects.length - 1 && shouldGetThreeColumns(project, index, webPairingMap)),
+              'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, webPairingMap),
+              'project-card-last': index === displayedWebProjects.length - 1,
+              'project-card-last-featured': index === displayedWebProjects.length - 1 && project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && webLayoutMap[index] && webLayoutMap[index].colStart === 0,
+              'project-card-last-unfeatured': index === displayedWebProjects.length - 1 && !project.featured
+            }">
               <div class="project-image">
                 <img v-if="project.image" :src="getImagePath(project.image)" :alt="project.title" />
                 <div v-else class="project-placeholder">{{ project.title }}</div>
-                <button 
-                  v-if="project.video" 
-                  @click="openVideoModal(project.video)"
-                  class="project-play-button"
-                  :aria-label="t('home.playVideo') + ' - ' + getProjectTitle(project)"
-                >
+                <button v-if="project.video" @click="openVideoModal(project.video)" class="project-play-button"
+                  :aria-label="t('home.playVideo') + ' - ' + getProjectTitle(project)">
                   <span class="play-icon">▶</span>
                 </button>
-                <button 
-                  v-if="project.gallery && project.gallery.length"
-                  @click="openGalleryModal(project.gallery)"
-                  class="project-play-button"
-                  :aria-label="t('home.viewGallery') + ' - ' + getProjectTitle(project)"
-                >
+                <button v-if="project.gallery && project.gallery.length" @click="openGalleryModal(project.gallery)"
+                  class="project-play-button" :aria-label="t('home.viewGallery') + ' - ' + getProjectTitle(project)">
                   <span class="gallery-icon">⧉</span>
                 </button>
               </div>
@@ -134,16 +125,13 @@
                 <p v-if="getProjectText(project, 'text2')" v-html="getProjectText(project, 'text2')">
                 </p>
                 <div class="project-tech" role="list" aria-label="Project technologies">
-                  <span v-for="keyword in getFilteredKeywords(project.keywords)" :key="keyword" role="listitem">{{ getTranslatedKeyword(keyword) }}</span>
+                  <span v-for="keyword in getFilteredKeywords(project.keywords)" :key="keyword" role="listitem">{{
+                    getTranslatedKeyword(keyword) }}</span>
                 </div>
                 <div class="project-links">
                   <template v-for="(link, index) in project.links" :key="index">
-                    <a 
-                      :href="link.url" 
-                      class="btn btn-secondary"
-                      :target="link.external ? '_blank' : '_self'"
-                      :rel="link.external ? 'noopener noreferrer' : ''"
-                    >
+                    <a :href="link.url" class="btn btn-secondary" :target="link.external ? '_blank' : '_self'"
+                      :rel="link.external ? 'noopener noreferrer' : ''">
                       {{ getLinkLabel(link.label) }}
                     </a>
                   </template>
@@ -158,76 +146,132 @@
       <section id="games" class="section">
         <div class="section-header">
           <h2 class="section-title">{{ t('games.title') }}</h2>
-          <button @click="showAllGames = !showAllGames" class="btn btn-primary btn-more">
-            {{ getShowMoreText(showAllGames) }}
-          </button>
         </div>
-        
-        
-        <div class="project-category" v-if="displayedGames.length > 0">
-          <div class="projects-grid">
-            <div 
-              v-for="(project, index) in displayedGames" 
-              :key="project.id"
-              class="project-card"
-              :class="{ 
-                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, gamesPairingMap) && !(index === displayedGames.length - 1 && shouldGetThreeColumns(project, index, gamesPairingMap)),
-                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, gamesPairingMap),
-                'project-card-last': index === displayedGames.length - 1,
-                'project-card-last-featured': index === displayedWebProjects.length - 1 && project.featured && !shouldGetThreeColumns(project, index, webPairingMap) && webLayoutMap[index] && webLayoutMap[index].colStart === 0,
-                'project-card-last-unfeatured': index === displayedGames.length - 1 && !project.featured
-              }"
-            >
-              <div class="project-image">
-                <img v-if="project.image" :src="getImagePath(project.image)" :alt="project.title" />
-                <div v-else class="project-placeholder">{{ project.title }}</div>
-                <button 
-                  v-if="project.video" 
-                  @click="openVideoModal(project.video)"
-                  class="project-play-button"
-                  :aria-label="t('home.playVideo') + ' - ' + getProjectTitle(project)"
-                >
-                  <span class="play-icon">▶</span>
-                </button>
-                <button 
-                  v-if="project.gallery && project.gallery.length"
-                  @click="openGalleryModal(project.gallery)"
-                  class="project-play-button"
-                  :aria-label="t('home.viewGallery') + ' - ' + getProjectTitle(project)"
-                >
-                  <span class="play-icon">⧉</span>
-                </button>
+
+        <div class="section-container-stencil" v-if="displayedIndieGames.length > 0">
+          <div class="subsection-title">
+            <h3>{{ t('home.indieGames') }}</h3>
+          </div>
+          <div class="project-category">
+            <div class="projects-grid">
+              <div v-for="(project, index) in displayedIndieGames" :key="project.id" class="project-card" :class="{
+                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, indieGamesPairingMap) && !(index === displayedIndieGames.length - 1 && shouldGetThreeColumns(project, index, indieGamesPairingMap)),
+                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, indieGamesPairingMap),
+                'project-card-last': index === displayedIndieGames.length - 1,
+                'project-card-last-featured': index === displayedIndieGames.length - 1 && project.featured && !shouldGetThreeColumns(project, index, indieGamesPairingMap) && indieGamesLayoutMap[index] && indieGamesLayoutMap[index].colStart === 0,
+                'project-card-last-unfeatured': index === displayedIndieGames.length - 1 && !project.featured
+              }">
+                <div class="project-image">
+                  <img v-if="project.image" :src="getImagePath(project.image)" :alt="project.title" />
+                  <div v-else class="project-placeholder">{{ project.title }}</div>
+                  <button v-if="project.video" @click="openVideoModal(project.video)" class="project-play-button"
+                    :aria-label="t('home.playVideo') + ' - ' + getProjectTitle(project)">
+                    <span class="play-icon">▶</span>
+                  </button>
+                  <button v-if="project.gallery && project.gallery.length" @click="openGalleryModal(project.gallery)"
+                    class="project-play-button" :aria-label="t('home.viewGallery') + ' - ' + getProjectTitle(project)">
+                    <span class="gallery-icon">⧉</span>
+                  </button>
+                </div>
+                <div class="project-info">
+                  <h4>{{ getProjectTitle(project) }}</h4>
+                  <div v-if="project.dateFinished" class="project-date">
+                    {{ formatDate(project.dateFinished) }}
+                  </div>
+                  <div v-if="!project.universityProject && !project.researchProject"
+                    class="project-badge project-badge-indie">
+                    {{ t('home.indieProject') }}
+                  </div>
+                  <div v-if="project.universityProject" class="project-badge">
+                    {{ t('home.universityProject') }}
+                  </div>
+                  <div v-if="project.researchProject" class="project-badge">
+                    {{ t('home.researchProject') }}
+                  </div>
+                  <p v-if="getProjectText(project, 'text1')">
+                    {{ getProjectText(project, 'text1') }}
+                  </p>
+                  <p v-if="getProjectText(project, 'text2')" v-html="getProjectText(project, 'text2')">
+                  </p>
+                  <div class="project-tech" role="list" aria-label="Project technologies">
+                    <span v-for="keyword in getFilteredKeywords(project.keywords)" :key="keyword" role="listitem">{{
+                      getTranslatedKeyword(keyword) }}</span>
+                  </div>
+                  <div class="project-links">
+                    <template v-for="(link, index) in project.links" :key="index">
+                      <a :href="link.url" class="btn btn-secondary" :target="link.external ? '_blank' : '_self'"
+                        :rel="link.external ? 'noopener noreferrer' : ''">
+                        {{ getLinkLabel(link.label) }}
+                      </a>
+                    </template>
+                  </div>
+                </div>
               </div>
-              <div class="project-info">
-                <h4>{{ getProjectTitle(project) }}</h4>
-                <div v-if="project.dateFinished" class="project-date">
-                  {{ formatDate(project.dateFinished) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="section-container-stencil" v-if="displayedUniGames.length > 0">
+          <div class="subsection-title">
+            <h3>{{ t('home.academicGames') }}</h3>
+            <button @click="showAllGames = !showAllGames" class="btn btn-primary btn-more">
+              {{ getShowMoreText(showAllGames) }}
+            </button>
+          </div>
+
+          <div class="project-category">
+            <div class="projects-grid">
+              <div v-for="(project, index) in displayedUniGames" :key="project.id" class="project-card" :class="{
+                'project-card-featured': project.featured && !shouldGetThreeColumns(project, index, uniGamesPairingMap) && !(index === displayedUniGames.length - 1 && shouldGetThreeColumns(project, index, uniGamesPairingMap)),
+                'project-card-featured-pair': project.featured && shouldGetThreeColumns(project, index, uniGamesPairingMap),
+                'project-card-last': index === displayedUniGames.length - 1,
+                'project-card-last-featured': index === displayedUniGames.length - 1 && project.featured && !shouldGetThreeColumns(project, index, uniGamesPairingMap) && uniGamesLayoutMap[index] && uniGamesLayoutMap[index].colStart === 0,
+                'project-card-last-unfeatured': index === displayedUniGames.length - 1 && !project.featured
+              }">
+                <div class="project-image">
+                  <img v-if="project.image" :src="getImagePath(project.image)" :alt="project.title" />
+                  <div v-else class="project-placeholder">{{ project.title }}</div>
+                  <button v-if="project.video" @click="openVideoModal(project.video)" class="project-play-button"
+                    :aria-label="t('home.playVideo') + ' - ' + getProjectTitle(project)">
+                    <span class="play-icon">▶</span>
+                  </button>
+                  <button v-if="project.gallery && project.gallery.length" @click="openGalleryModal(project.gallery)"
+                    class="project-play-button" :aria-label="t('home.viewGallery') + ' - ' + getProjectTitle(project)">
+                    <span class="gallery-icon">⧉</span>
+                  </button>
                 </div>
-                <div v-if="project.universityProject" class="project-badge">
-                  {{ t('home.universityProject') }}
-                </div>
-                <div v-if="project.researchProject" class="project-badge">
-                  {{ t('home.researchProject') }}
-                </div>
-                <p v-if="getProjectText(project, 'text1')">
-                  {{ getProjectText(project, 'text1') }}
-                </p>
-                <p v-if="getProjectText(project, 'text2')" v-html="getProjectText(project, 'text2')">
-                </p>
-                <div class="project-tech" role="list" aria-label="Project technologies">
-                  <span v-for="keyword in getFilteredKeywords(project.keywords)" :key="keyword" role="listitem">{{ getTranslatedKeyword(keyword) }}</span>
-                </div>
-                <div class="project-links">
-                  <template v-for="(link, index) in project.links" :key="index">
-                    <a 
-                      :href="link.url" 
-                      class="btn btn-secondary"
-                      :target="link.external ? '_blank' : '_self'"
-                      :rel="link.external ? 'noopener noreferrer' : ''"
-                    >
-                      {{ getLinkLabel(link.label) }}
-                    </a>
-                  </template>
+                <div class="project-info">
+                  <h4>{{ getProjectTitle(project) }}</h4>
+                  <div v-if="project.dateFinished" class="project-date">
+                    {{ formatDate(project.dateFinished) }}
+                  </div>
+                  <div v-if="!project.universityProject && !project.researchProject"
+                    class="project-badge project-badge-indie">
+                    {{ t('home.indieProject') }}
+                  </div>
+                  <div v-if="project.universityProject" class="project-badge">
+                    {{ t('home.universityProject') }}
+                  </div>
+                  <div v-if="project.researchProject" class="project-badge">
+                    {{ t('home.researchProject') }}
+                  </div>
+                  <p v-if="getProjectText(project, 'text1')">
+                    {{ getProjectText(project, 'text1') }}
+                  </p>
+                  <p v-if="getProjectText(project, 'text2')" v-html="getProjectText(project, 'text2')">
+                  </p>
+                  <div class="project-tech" role="list" aria-label="Project technologies">
+                    <span v-for="keyword in getFilteredKeywords(project.keywords)" :key="keyword" role="listitem">{{
+                      getTranslatedKeyword(keyword) }}</span>
+                  </div>
+                  <div class="project-links">
+                    <template v-for="(link, index) in project.links" :key="index">
+                      <a :href="link.url" class="btn btn-secondary" :target="link.external ? '_blank' : '_self'"
+                        :rel="link.external ? 'noopener noreferrer' : ''">
+                        {{ getLinkLabel(link.label) }}
+                      </a>
+                    </template>
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,25 +292,15 @@
               <span class="contact-icon">✉</span>
               <span>{{ t('home.footer.email') }}</span>
             </button>
-            <a 
-              href="https://www.linkedin.com/in/jan-ole-petersen-478464282/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="contact-link btn btn-secondary"
-              :aria-label="t('home.footer.linkedin')"
-            >
-              <img :src="getImagePath('/in.png')" class="contact-icon linkedin-icon" :alt="t('home.footer.linkedin')" />
-              <span>{{ t('home.footer.linkedin') }}</span>
+            <a href="https://www.linkedin.com/in/jan-ole-petersen-478464282/" target="_blank" rel="noopener noreferrer"
+              class="contact-link btn btn-secondary" :aria-label="t('home.footer.linkedin')">
+              <img :src="getImagePath('/in.png')" class="contact-icon linkedin-icon" alt="" />
+              <span aria-hidden="true">{{ t('home.footer.linkedin') }}</span>
             </a>
-            <a 
-              href="https://www.xing.com/profile/JanOle_Petersen070686" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="contact-link btn btn-secondary"
-              :aria-label="t('home.footer.xing')"
-            >
-              <img :src="getImagePath('/xing.png')" class="contact-icon linkedin-icon" :alt="t('home.footer.xing')" />
-              <span>{{ t('home.footer.xing') }}</span>
+            <a href="https://www.xing.com/profile/JanOle_Petersen070686" target="_blank" rel="noopener noreferrer"
+              class="contact-link btn btn-secondary" :aria-label="t('home.footer.xing')">
+              <img :src="getImagePath('/xing.png')" class="contact-icon linkedin-icon" alt="" />
+              <span aria-hidden="true">{{ t('home.footer.xing') }}</span>
             </a>
           </div>
         </div>
@@ -275,18 +309,22 @@
         <p>{{ t('home.footer.copyright') }}</p>
         <div class="footer-links">
           <a href="#privacy-policy" @click="scrollTo('privacy-policy')">{{ t('home.footer.privacyPolicy') }}</a>
-          <!-- <a href="#imprint" @click="scrollTo('imprint')">{{ t('home.footer.imprint') }}</a> -->
-          <a href="#accessibility-statement" @click="scrollTo('accessibility-statement')">{{ t('home.footer.accessibilityStatement') }}</a>
+          <a href="#imprint" @click="scrollTo('imprint')">{{ t('home.footer.imprint') }}</a>
+          <a href="#accessibility-statement" @click="scrollTo('accessibility-statement')">{{
+            t('home.footer.accessibilityStatement') }}</a>
         </div>
       </div>
-      
+
       <!-- Privacy Policy Modal -->
-      <div v-if="showPrivacyPolicy" class="modal-overlay" @click="showPrivacyPolicy = false">
+      <div v-if="showPrivacyPolicy" class="modal-overlay" @click="showPrivacyPolicy = false" role="dialog"
+        aria-modal="true" aria-labelledby="privacy-policy-title">
         <div class="modal-content" @click.stop>
           <button class="modal-close" @click="showPrivacyPolicy = false">×</button>
           <h2 id="privacy-policy-title">{{ t('home.privacyPolicy.title') }}</h2>
           <div class="modal-body">
-            <p><strong>{{ t('home.privacyPolicy.lastUpdated') }}</strong> {{ new Date().toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US') }}</p>
+            <p><strong>{{ t('home.privacyPolicy.lastUpdated') }}</strong> {{ new Date().toLocaleDateString(language ===
+              'de'
+              ? 'de-DE' : 'en-US', { day: '2-digit', month: '2-digit', year: 'numeric' }) }}</p>
             <h3>{{ t('home.privacyPolicy.informationWeCollect') }}</h3>
             <p>
               {{ t('home.privacyPolicy.informationWeCollectText') }}
@@ -303,28 +341,20 @@
             <p>
               {{ t('home.privacyPolicy.contactText') }}
             </p>
+            {{ t('home.imprint.email') }}: <a href="mailto:janole.petersen@gmx.de">janole.petersen@gmx.de</a>
           </div>
         </div>
       </div>
 
       <!-- Imprint Modal -->
-      <div 
-        v-if="showImprint" 
-        class="modal-overlay" 
-        @click="showImprint = false"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="imprint-title"
-      >
+      <div v-if="showImprint" class="modal-overlay" @click="showImprint = false" role="dialog" aria-modal="true"
+        aria-labelledby="imprint-title">
         <div class="modal-content" @click.stop>
-          <button 
-            class="modal-close" 
-            @click="showImprint = false"
-            aria-label="Close imprint"
-          >×</button>
+          <button class="modal-close" @click="showImprint = false" aria-label="Close imprint">×</button>
           <h2 id="imprint-title">{{ t('home.imprint.title') }}</h2>
           <div class="modal-body">
-            <p><strong>{{ t('home.imprint.lastUpdated') }}</strong> {{ new Date().toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US') }}</p>
+            <p><strong>{{ t('home.imprint.lastUpdated') }}</strong> {{ new Date().toLocaleDateString(language === 'de' ?
+              'de-DE' : 'en-US', { day: '2-digit', month: '2-digit', year: 'numeric' }) }}</p>
             <h3>{{ t('home.imprint.responsible') }}</h3>
             <p>
               {{ t('home.imprint.name') }}<br>
@@ -335,7 +365,6 @@
             <h3>{{ t('home.imprint.contact') }}</h3>
             <p>
               {{ t('home.imprint.email') }}: <a href="mailto:janole.petersen@gmx.de">janole.petersen@gmx.de</a><br>
-              <span v-if="t('home.imprint.phone')">{{ t('home.imprint.phone') }}: {{ t('home.imprint.phoneNumber') }}</span>
             </p>
             <h3>{{ t('home.imprint.websiteHost') }}</h3>
             <p>
@@ -356,25 +385,18 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Accessibility Statement Modal -->
-      <div 
-        v-if="showAccessibilityStatement" 
-        class="modal-overlay" 
-        @click="showAccessibilityStatement = false"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="accessibility-statement-title"
-      >
+      <div v-if="showAccessibilityStatement" class="modal-overlay" @click="showAccessibilityStatement = false"
+        role="dialog" aria-modal="true" aria-labelledby="accessibility-statement-title">
         <div class="modal-content" @click.stop>
-          <button 
-            class="modal-close" 
-            @click="showAccessibilityStatement = false"
-            aria-label="Close accessibility statement"
-          >×</button>
+          <button class="modal-close" @click="showAccessibilityStatement = false"
+            aria-label="Close accessibility statement">×</button>
           <h2 id="accessibility-statement-title">{{ t('home.accessibilityStatement.title') }}</h2>
           <div class="modal-body">
-            <p><strong>{{ t('home.accessibilityStatement.lastUpdated') }}</strong> {{ new Date().toLocaleDateString(language === 'de' ? 'de-DE' : 'en-US') }}</p>
+            <p><strong>{{ t('home.accessibilityStatement.lastUpdated') }}</strong> {{ new
+              Date().toLocaleDateString(language
+                === 'de' ? 'de-DE' : 'en-US', { day: '2-digit', month: '2-digit', year: 'numeric' }) }}</p>
             <h3>{{ t('home.accessibilityStatement.compliance') }}</h3>
             <p>{{ t('home.accessibilityStatement.complianceText') }}</p>
             <h3>{{ t('home.accessibilityStatement.standards') }}</h3>
@@ -398,58 +420,38 @@
       </div>
 
       <!-- Video Modal -->
-      <div v-if="showVideoModal" class="modal-overlay" @click="closeVideoModal">
+      <div v-if="showVideoModal" class="modal-overlay" @click="closeVideoModal" role="dialog" aria-modal="true"
+        :aria-label="t('home.playVideo')">
         <div class="modal-content video-modal-content" @click.stop>
           <button class="modal-close" @click="closeVideoModal" :aria-label="t('home.closeVideo')">×</button>
           <div class="video-modal-body">
-            <iframe 
-              v-if="currentVideo && isYouTubeUrl(currentVideo)" 
-              :src="getYouTubeEmbedUrl(currentVideo)" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
-              class="modal-video"
-            ></iframe>
-            <video 
-              v-else-if="currentVideo" 
-              :src="currentVideo" 
-              controls
-              class="modal-video"
-            ></video>
+            <iframe v-if="currentVideo && isYouTubeUrl(currentVideo)" :src="getYouTubeEmbedUrl(currentVideo)"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen class="modal-video"></iframe>
+            <video v-else-if="currentVideo" :src="currentVideo" controls class="modal-video"></video>
           </div>
         </div>
       </div>
 
       <!-- Carousel Modal -->
-      <div v-if="showGalleryModal" class="modal-overlay" @click="closeGalleryModal">
+      <div v-if="showGalleryModal" class="modal-overlay" @click="closeGalleryModal" role="dialog" aria-modal="true"
+        :aria-label="t('home.viewGallery')">
         <div class="modal-content video-modal-content" @click.stop>
           <button class="modal-close" @click="closeGalleryModal" :aria-label="t('home.closeGallery')">×</button>
           <div class="video-modal-body">
             <div class="carousel-container">
-              <button 
-                v-if="currentGallery.length > 1" 
-                @click.stop="prevImage" 
-                class="carousel-btn carousel-prev"
-              ><span data-v-18fc5d82="" class="carousel-arrow-left">‹</span></button>
-              <img 
-                v-if="currentGallery.length > 0"
-                :src="getImagePath(currentGallery[currentGalleryIndex])"
-                alt="Gallery image"
-                class="carousel-image"
-              />
-              <button 
-                v-if="currentGallery.length > 1" 
-                @click.stop="nextImage" 
-                class="carousel-btn carousel-next"
-              ><span data-v-18fc5d82="" class="carousel-arrow-right">›</span></button>
-              
-              <div v-if="currentGallery.length > 1" class="carousel-indicators" style="position: absolute; bottom: 10px; display: flex; gap: 8px; z-index: 10;">
-                <span 
-                  v-for="(_, idx) in currentGallery" 
-                  :key="idx" 
-                  @click.stop="currentGalleryIndex = idx"
-                  :class="idx === currentGalleryIndex ? 'carousel-indicator-point-selected' : 'carousel-indicator-point'"
-                ></span>
+              <button v-if="currentGallery.length > 1" @click.stop="prevImage" class="carousel-btn carousel-prev"><span
+                  data-v-18fc5d82="" class="carousel-arrow-left">‹</span></button>
+              <img v-if="currentGallery.length > 0" :src="getImagePath(currentGallery[currentGalleryIndex])"
+                alt="Gallery image" class="carousel-image" />
+              <button v-if="currentGallery.length > 1" @click.stop="nextImage" class="carousel-btn carousel-next"><span
+                  data-v-18fc5d82="" class="carousel-arrow-right">›</span></button>
+
+              <div v-if="currentGallery.length > 1" class="carousel-indicators"
+                style="position: absolute; bottom: 10px; display: flex; gap: 8px; z-index: 10;">
+                <span v-for="(_, idx) in currentGallery" :key="idx" @click.stop="currentGalleryIndex = idx"
+                  :class="idx === currentGalleryIndex ? 'carousel-indicator-point-selected' : 'carousel-indicator-point'"></span>
               </div>
             </div>
           </div>
@@ -457,7 +459,8 @@
       </div>
 
       <!-- Contact Form Modal -->
-      <div v-if="showContactForm" class="modal-overlay" @click="closeContactForm">
+      <div v-if="showContactForm" class="modal-overlay" @click="closeContactForm" role="dialog" aria-modal="true"
+        aria-labelledby="contact-form-title">
         <div class="modal-content contact-form-modal" @click.stop>
           <button class="modal-close" @click="closeContactForm" :aria-label="t('home.contactForm.close')">×</button>
           <h2 id="contact-form-title">
@@ -466,16 +469,12 @@
           <form @submit.prevent="submitForm" class="contact-form" novalidate>
             <div class="form-group">
               <label for="contact-name">{{ t('home.contactForm.name') }} <span class="required">*</span></label>
-              <input
-                id="contact-name"
-                v-model="formData.name"
-                type="text"
-                :placeholder="t('home.contactForm.namePlaceholder')"
-                required
+              <input id="contact-name" v-model="formData.name" type="text"
+                :placeholder="t('home.contactForm.namePlaceholder')" required
                 :aria-invalid="formErrors.name ? 'true' : 'false'"
-                :aria-describedby="formErrors.name ? 'name-error' : null"
-              />
-              <span v-if="formErrors.name" id="name-error" class="error-message" role="alert">{{ formErrors.name }}</span>
+                :aria-describedby="formErrors.name ? 'name-error' : null" />
+              <span v-if="formErrors.name" id="name-error" class="error-message" role="alert">{{ formErrors.name
+                }}</span>
             </div>
 
             <div class="form-group">
@@ -483,30 +482,23 @@
                 {{ t('home.contactForm.emailRequired') }}
                 <span class="required">*</span>
               </label>
-              <input
-                id="contact-email"
-                v-model="formData.email"
-                type="email"
-                :placeholder="t('home.contactForm.emailPlaceholder')"
-                required
+              <input id="contact-email" v-model="formData.email" type="email"
+                :placeholder="t('home.contactForm.emailPlaceholder')" required
                 :aria-invalid="formErrors.email ? 'true' : 'false'"
-                :aria-describedby="formErrors.email ? 'email-error' : null"
-              />
-              <span v-if="formErrors.email" id="email-error" class="error-message" role="alert">{{ formErrors.email }}</span>
+                :aria-describedby="formErrors.email ? 'email-error' : null" />
+              <span v-if="formErrors.email" id="email-error" class="error-message" role="alert">{{ formErrors.email
+                }}</span>
             </div>
 
             <div class="form-group">
               <label for="contact-message">{{ t('home.contactForm.message') }} <span class="required">*</span></label>
-              <textarea
-                id="contact-message"
-                v-model="formData.message"
-                :placeholder="t('home.contactForm.messagePlaceholder')"
-                rows="6"
-                required
+              <textarea id="contact-message" v-model="formData.message"
+                :placeholder="t('home.contactForm.messagePlaceholder')" rows="6" required
                 :aria-invalid="formErrors.message ? 'true' : 'false'"
-                :aria-describedby="formErrors.message ? 'message-error' : null"
-              ></textarea>
-              <span v-if="formErrors.message" id="message-error" class="error-message" role="alert">{{ formErrors.message }}</span>
+                :aria-describedby="formErrors.message ? 'message-error' : null"></textarea>
+              <span v-if="formErrors.message" id="message-error" class="error-message" role="alert">{{
+                formErrors.message
+                }}</span>
             </div>
 
             <div v-if="formSuccess" class="success-message" role="alert">
@@ -554,7 +546,7 @@ const cookieBannerLang = computed(() => {
 const getCookieBannerText = (key) => {
   const currentLang = cookieBannerLang.value
   const translations = currentLang === 'de' ? deTranslations : enTranslations
-  
+
   const keys = key.split('.')
   let value = translations
   for (const k of keys) {
@@ -618,7 +610,7 @@ const handleKeydown = (e) => {
     if (showVideoModal.value) closeVideoModal()
     if (showGalleryModal.value) closeGalleryModal()
   }
-  
+
   if (showGalleryModal.value) {
     if (e.key === 'ArrowLeft') prevImage()
     if (e.key === 'ArrowRight') nextImage()
@@ -703,17 +695,32 @@ const allGames = computed(() => {
   return projects.value.filter(p => p.category === 'Game Development')
 })
 
+const allIndieGames = computed(() => {
+  return allGames.value.filter(p => !p.universityProject && !p.researchProject)
+})
+
+const allUniGames = computed(() => {
+  return allGames.value.filter(p => p.universityProject || p.researchProject)
+})
+
 // Web projects - all
 const webProjects = computed(() => {
   return projects.value.filter(p => p.category === 'Web Development')
 })
 
-// Displayed game projects (filtered based on showAllGames)
-const displayedGames = computed(() => {
+// Displayed game projects
+const displayedIndieGames = computed(() => {
   if (showAllGames.value) {
-    return allGames.value
+    return allIndieGames.value
   }
-  return allGames.value.filter(p => p.featured)
+  return allIndieGames.value.filter(p => p.featured)
+})
+
+const displayedUniGames = computed(() => {
+  if (showAllGames.value) {
+    return allUniGames.value
+  }
+  return allUniGames.value.filter(p => p.featured)
 })
 
 // Displayed web projects (filtered based on showAllWeb)
@@ -728,18 +735,17 @@ const hasHiddenGames = computed(() => allGames.value.some(p => !p.featured))
 const hasHiddenWeb = computed(() => webProjects.value.some(p => !p.featured))
 
 const getShowMoreText = (isShowLess) => {
-  if (language.value === 'de') {
-    return isShowLess ? 'Weniger anzeigen' : 'Mehr anzeigen'
-  }
-  return isShowLess ? 'Show Less' : 'Show More'
+  return isShowLess ? t('home.showLess') : t('home.showMore')
 }
 
 
 // Pre-calculate pairing maps for performance
-const gamesPairingMap = computed(() => calculateFeaturedPairing(displayedGames.value))
+const indieGamesPairingMap = computed(() => calculateFeaturedPairing(displayedIndieGames.value))
+const uniGamesPairingMap = computed(() => calculateFeaturedPairing(displayedUniGames.value))
 const webPairingMap = computed(() => calculateFeaturedPairing(displayedWebProjects.value))
 
-const gamesLayoutMap = computed(() => calculateLayout(displayedGames.value, gamesPairingMap.value))
+const indieGamesLayoutMap = computed(() => calculateLayout(displayedIndieGames.value, indieGamesPairingMap.value))
+const uniGamesLayoutMap = computed(() => calculateLayout(displayedUniGames.value, uniGamesPairingMap.value))
 const webLayoutMap = computed(() => calculateLayout(displayedWebProjects.value, webPairingMap.value))
 
 // Latest project with image (by dateFinished)
@@ -767,7 +773,11 @@ const PROJECT_TITLE_MAP = {
   'Interactive Dashboard': 'interactiveDashboard',
   'WebGL Game Engine': 'webglGameEngine',
   'Social Media App': 'socialMediaApp',
-  'Zukunftsentscheid Hamburg': 'zukunftsentscheidHamburg'
+  'Zukunftsentscheid Hamburg': 'zukunftsentscheidHamburg',
+  'Axiom Forge Webseite': 'axiomForge',
+  'Axiom Forge Website': 'axiomForge',
+  'Terra Arcana': 'terraArcana',
+  'Axiom Forge / Terra Arcana': 'terraArcana'
 }
 
 const getProjectTranslationKey = (title) => PROJECT_TITLE_MAP[title] || null
@@ -819,9 +829,12 @@ const getFilteredKeywords = (keywords) => {
 // Get translated link label (cache translations)
 const LINK_LABEL_KEYS = {
   'Play on itch.io': 'home.playOnItchIo',
+  'Play demo on itch.io': 'home.playDemoOnItchIo',
   'Visit Website': 'home.visitWebsite',
+  'Visit developer\'s website': 'home.visitDeveloperWebsite',
   'Visit the Meet-Up Website': 'home.visitMeetUpWebsite',
-  'View on GitHub': 'home.viewOnGitHub'
+  'View on GitHub': 'home.viewOnGitHub',
+  'Join Discord': 'home.joinDiscord'
 }
 
 const getLinkLabel = (label) => {
@@ -833,7 +846,7 @@ const getLinkLabel = (label) => {
 const formatDate = (dateStr) => {
   if (!dateStr) return ''
   const [year, month] = dateStr.split('-')
-  const monthNames = language.value === 'de' 
+  const monthNames = language.value === 'de'
     ? ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
     : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   const monthIndex = parseInt(month, 10) - 1
@@ -843,56 +856,56 @@ const formatDate = (dateStr) => {
 // Pre-calculate which featured projects should be paired (to avoid circular dependencies)
 const calculateFeaturedPairing = (projects) => {
   const pairingMap = {}
-  
+
   // Iterate through projects and find pairs of featured projects that can share a row
   for (let i = 0; i < projects.length; i++) {
     if (!projects[i].featured || pairingMap[i]) continue
-    
+
     // Calculate position of current project (assuming it takes 4 columns for now)
     let currentColumn = 0
     for (let k = 0; k < i; k++) {
       currentColumn += projects[k].featured ? (pairingMap[k] ? 3 : 4) : 2
     }
-    
+
     const currentRow = Math.floor(currentColumn / 6)
     const currentPositionInRow = currentColumn % 6
-    
+
     // Find next featured project
     for (let j = i + 1; j < projects.length; j++) {
       if (!projects[j].featured || pairingMap[j]) continue
-      
+
       // Calculate where next featured would be if current takes 3 columns
       let nextColumn = currentColumn + 3 // Current takes 3 columns
-      
+
       // Add columns for all projects between i and j
       for (let k = i + 1; k < j; k++) {
         // Use actual width: paired featured = 3, unpaired featured = 4, unfeatured = 2
         nextColumn += projects[k].featured ? (pairingMap[k] ? 3 : 4) : 2
       }
-      
+
       const nextRow = Math.floor(nextColumn / 6)
       const nextPositionInRow = nextColumn % 6
-      
+
       // If both would be on the same row and both fit with 3 columns each
       // Special case: if they're the last two projects and both are featured, try to pair them
       const areLastTwo = i === projects.length - 2 && j === projects.length - 1
-      
+
       if (areLastTwo && projects[i].featured && projects[j].featured) {
         // Last two featured projects should pair if there's space (current position + 3 <= 6)
         if (currentPositionInRow + 3 <= 6) {
           pairingMap[i] = true
           pairingMap[j] = true
         }
-      } else if (currentRow === nextRow && 
-          currentPositionInRow + 3 <= 6 && 
-          nextPositionInRow + 3 <= 6) {
+      } else if (currentRow === nextRow &&
+        currentPositionInRow + 3 <= 6 &&
+        nextPositionInRow + 3 <= 6) {
         pairingMap[i] = true
         pairingMap[j] = true
       }
       break // Only check the next featured project
     }
   }
-  
+
   return pairingMap
 }
 
@@ -901,26 +914,26 @@ const calculateLayout = (projects, pairingMap) => {
   const layoutMap = {}
   let row = 0
   let col = 0
-  
+
   for (let i = 0; i < projects.length; i++) {
     const project = projects[i]
     const isFeatured = project.featured
     const isPaired = isFeatured && pairingMap[i]
     const width = isFeatured ? (isPaired ? 3 : 4) : 2
-    
+
     // Check if fits in current row
     if (col + width > 6) {
       // Wrap to next row
       row++
       col = 0
     }
-    
+
     layoutMap[i] = {
       row,
       colStart: col,
       width
     }
-    
+
     col += width
   }
   return layoutMap
@@ -1078,13 +1091,13 @@ const submitForm = () => {
 
     // Create mailto link to open user's email client
     const mailtoLink = `mailto:janole.petersen@gmx.de?subject=${subject}&body=${emailBody}`
-    
+
     // Open email client
     window.location.href = mailtoLink
-    
+
     // Show success message
     formSuccess.value = true
-    
+
     // Reset form after a short delay
     setTimeout(() => {
       closeContactForm()
@@ -1133,7 +1146,7 @@ const hexToRgb = (hex) => {
 const getReadableAccentColor = (bgColor) => {
   const bgLuminance = getLuminance(bgColor)
   const accentLuminance = getLuminance(accentColor.value)
-  
+
   // If background is dark (luminance < 0.2), ensure accent is bright enough
   if (bgLuminance < 0.2) {
     // If accent is too dark, brighten it
@@ -1142,12 +1155,12 @@ const getReadableAccentColor = (bgColor) => {
     }
     return accentColor.value
   }
-  
+
   // If background is light, darken the accent
   if (bgLuminance > 0.5) {
     return adjustDarkness(accentColor.value, 0.3)
   }
-  
+
   return accentColor.value
 }
 
@@ -1160,16 +1173,16 @@ const getDarkerAccent = computed(() => {
 const adjustBrightness = (hex, percent) => {
   const rgb = hexToRgb(hex)
   if (!rgb) return hex
-  
+
   const adjust = (val) => {
     const newVal = Math.max(0, Math.min(255, val + ((255 - val) * percent)))
     return Math.round(newVal)
   }
-  
+
   const r = adjust(rgb.r).toString(16).padStart(2, '0')
   const g = adjust(rgb.g).toString(16).padStart(2, '0')
   const b = adjust(rgb.b).toString(16).padStart(2, '0')
-  
+
   return `#${r}${g}${b}`
 }
 
@@ -1177,16 +1190,16 @@ const adjustBrightness = (hex, percent) => {
 const adjustDarkness = (hex, percent) => {
   const rgb = hexToRgb(hex)
   if (!rgb) return hex
-  
+
   const adjust = (val) => {
     const newVal = Math.max(0, Math.min(255, val * (1 - percent)))
     return Math.round(newVal)
   }
-  
+
   const r = adjust(rgb.r).toString(16).padStart(2, '0')
   const g = adjust(rgb.g).toString(16).padStart(2, '0')
   const b = adjust(rgb.b).toString(16).padStart(2, '0')
-  
+
   return `#${r}${g}${b}`
 }
 
@@ -1195,26 +1208,26 @@ const dynamicStyles = computed(() => {
   // Dark background colors used in the portfolio
   const darkBg = secondaryColor.value
   const cardBg = '#1a2529' // Slightly lighter than secondary for cards
-  
+
   // Get readable accent colors for different backgrounds
   const accentOnDark = getReadableAccentColor(darkBg)
   const accentOnCard = getReadableAccentColor(cardBg)
-  
+
   // Create gradient for hero title
   const lighterAccent = lighterAccentColor.value
   const gradient = `linear-gradient(135deg, ${accentColor.value} 0%, ${lighterAccent} 100%)`
-  
+
   // Hover states
   const accentHover = getDarkerAccent.value
   const accentHoverLight = lighterAccent
-  
+
   // Create rgba version for radial gradient with opacity
   const rgb = hexToRgb(accentColor.value)
   const accentRgba = rgb ? `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.1)` : 'rgba(0, 217, 255, 0.1)'
-  
+
   // Get base URL for assets
   const baseUrl = import.meta.env.BASE_URL
-  
+
   return {
     '--accent-color': accentColor.value,
     '--accent-on-dark': accentOnDark,

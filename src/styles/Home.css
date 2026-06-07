@@ -10,6 +10,7 @@
     url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='hexagons' width='100' height='100' patternUnits='userSpaceOnUse' patternTransform='translate(0 0) scale(1)'%3E%3Cpolygon points='50 0 93.3 25 93.3 75 50 100 6.7 75 6.7 25' fill='none' stroke='%2300d9ff' stroke-width='0.5' opacity='0.15'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hexagons)'/%3E%3C/svg%3E");
   background-size: 100px 100px;
   background-position: 0 0;
+  background-attachment: fixed;
   transition: background-color 0.3s ease;
 }
 
@@ -440,6 +441,16 @@
   padding: 0.5rem;
   max-height: 600px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color, #333) var(--bg-card, #1a2529);
+}
+
+.home .project-videos-container::-webkit-scrollbar-track {
+  background: var(--bg-card, #1a2529);
+}
+
+.home .project-videos-container::-webkit-scrollbar-thumb {
+  border: 2px solid var(--bg-card, #1a2529);
 }
 
 .home .project-video-multiple {
@@ -807,6 +818,16 @@
   position: relative;
   animation: slideUp 0.3s ease;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color, #333) var(--bg-card, #1a2529);
+}
+
+.home .modal-content::-webkit-scrollbar-track {
+  background: var(--bg-card, #1a2529);
+}
+
+.home .modal-content::-webkit-scrollbar-thumb {
+  border: 2px solid var(--bg-card, #1a2529);
 }
 
 .home .modal-close {
@@ -1208,6 +1229,94 @@
   cursor: not-allowed;
 }
 
+/* Additional Container Styles */
+.home .section-container,
+.home #games.section {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.home .section-container > .section-header:first-child > .section-title,
+.home .section-container > .section-title:first-child,
+.home .section-container > .subsection-title:first-child,
+.home .section-container-stencil > .subsection-title:first-child {
+  margin-top: 0;
+}
+
+.home .section-container-stencil {
+  /* Repliziert den globalen Main-Hintergrund (Hexagone) passgenau (fixed), um ein Loch zu simulieren */
+  background-color: var(--bg-primary);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='hexagons' width='100' height='100' patternUnits='userSpaceOnUse' patternTransform='translate(0 0) scale(1)'%3E%3Cpolygon points='50 0 93.3 25 93.3 75 50 100 6.7 75 6.7 25' fill='none' stroke='%2300d9ff' stroke-width='0.5' opacity='0.15'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hexagons)'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  border: 1px dashed var(--border-color);
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 5px 20px rgba(0, 0, 0, 0.2);
+  /* Etwas stärkerer Schatten für mehr Tiefe */
+}
+
+.home .games-header-container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.home .section-container-stencil .project-category,
+.home .section-container-stencil .projects-grid {
+  background-color: transparent !important;
+}
+
+.home .games-header-container .section-header,
+.home .games-header-container .section-title {
+  margin-bottom: 0;
+}
+
+.home .section-container-stencil .project-card {
+  background-color: var(--bg-card);
+}
+
+.home .subsection-title {
+  font-size: 1.5rem;
+  color: var(--text-accent);
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .subsection-title h3 {
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+[data-theme="light"] .home .section-container-stencil {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='hexagons' width='100' height='100' patternUnits='userSpaceOnUse' patternTransform='translate(0 0) scale(1)'%3E%3Cpolygon points='50 0 93.3 25 93.3 75 50 100 6.7 75 6.7 25' fill='none' stroke='%230088ff' stroke-width='0.7' opacity='0.15'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hexagons)'/%3E%3C/svg%3E");
+}
+
+.home .project-badge-indie {
+  background-color: rgba(255, 193, 7, 0.15) !important;
+  color: #ffc107 !important;
+  border: 1px solid rgba(255, 193, 7, 0.4) !important;
+}
+
+.home a:not(.btn) {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.home a:not(.btn):hover {
+  color: var(--accent-color);
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -1361,6 +1470,16 @@
 
   .home .form-actions .btn {
     width: 100%;
+  }
+
+  .home .section-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .home .section-container-stencil {
+    padding: 1.5rem;
+    border-radius: 12px;
   }
 }
 
